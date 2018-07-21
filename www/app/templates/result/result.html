@@ -1,0 +1,81 @@
+<ion-header-bar class="bar-stable bar bar-header bar-assertive b-header b-result">
+
+	<div class="buttons b-btn hideOnSearchInput">
+		<button class="b-btn__container" ng-click="vm.backToPrevState()">
+      <svg class="b-btn__icon android-visible" version="1.1" x="0px" y="0px"
+           width="408px" height="408px" viewBox="0 0 408 408">
+        <path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"/>
+      </svg>
+      <svg class="b-btn__icon ios-visible" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 31.494 31.494" style="enable-background:new 0 0 31.494 31.494;" xml:space="preserve">
+        <path style="fill:#fff;" d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+          c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+          c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"/>
+        </svg>
+		</button>
+	</div>
+
+	<h1 class="h1 b-header__title b-result__title title title-left hideOnSearchInput">{{vm.title}}</h1>
+
+	<div class="buttons b-btn b-btn__slide-input-wrap android-visible">
+
+		<!-- <button class="b-btn__container b-btn__container_row" ng-click="$root.showSearchInput()">
+			<svg class="b-btn__icon" version="1.1" x="0px" y="0px"
+				 width="446.25px" height="446.25px" viewBox="0 0 446.25 446.25">
+				<path d="M318.75,280.5h-20.4l-7.649-7.65c25.5-28.05,40.8-66.3,40.8-107.1C331.5,73.95,257.55,0,165.75,0S0,73.95,0,165.75 S73.95,331.5,165.75,331.5c40.8,0,79.05-15.3,107.1-40.8l7.65,7.649v20.4L408,446.25L446.25,408L318.75,280.5z M165.75,280.5 C102,280.5,51,229.5,51,165.75S102,51,165.75,51S280.5,102,280.5,165.75S229.5,280.5,165.75,280.5z"/>
+			</svg>
+		</button> -->
+
+		<div class="b-header__wrap-slide hideSearchInput">
+			<label class="b-header__input-wrap">
+				<input class="b-header__input" type="search" placeholder="Поиск">
+			</label>
+		</div>
+
+		<button class="b-btn__container b-btn__container_row hideSearchInput"
+				ng-click="$root.hideSearchInput()">
+		 	<svg class="b-btn__icon" version="1.1" x="0px" y="0px"
+				 width="357px" height="357px" viewBox="0 0 357 357">
+				<polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 214.2,178.5"/>
+			</svg>
+		</button>
+
+		<button class="b-btn__container b-btn__container_row hideOnSearchInput" ng-click="$root.showToolbarNav()">
+			<i class="b-btn__icon b-btn__icon_ionic ion-more"></i>
+		</button>
+	</div>
+
+</ion-header-bar>
+
+<ion-content class="content b-message">
+	<div ng-if="!vm.tests.length">
+		<div class="card b-card-tab__catalog b-category-goods" ng-if="!vm.filterSearchText">
+				<div class="b-category-goods__title" >
+					У Вас и у Ваших клиентов пока нет результатов подбора
+				</div>
+		</div>
+	</div>
+
+	<div class="b-message__row" ng-repeat="test in vm.tests"
+		ui-sref="app.main.history({ id   : test.id })">
+
+		<div class="b-message__body b-message__body_single">
+			<div class="b-message__avatar">
+				<img class="b-message__picture" fx-avatar="{{test.id}}" alt="" />
+			</div>
+			<div class="b-message__title b-message__title_single">
+				{{vm.userId == test.id ? 'Моя история подборов' : (test.name | crm : test.id)}}
+			</div>
+		</div>
+
+		<div class="b-message__info">
+			<div class="b-message__date b-message__date_single"
+				 ng-class="{'b-message__date_accent' : test.new }">
+				{{test.surveys[0].add_date | altDate}}
+			</div>
+
+		</div>
+
+	</div>
+
+</ion-content>

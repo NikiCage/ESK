@@ -1,0 +1,73 @@
+<ion-header-bar class="bar-stable bar bar-header bar-assertive b-header b-chat">
+	<div class="buttons b-btn">
+		<button class="b-btn__container" ng-click="vm.backToPrevState()">
+			<svg class="b-btn__icon android-visible" version="1.1" x="0px" y="0px" width="408px" height="408px" viewBox="0 0 408 408">
+				<path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"/>
+			</svg>
+			<svg class="b-btn__icon ios-visible" version="1.1" x="0px" y="0px" viewBox="0 0 31.494 31.494" style="enable-background:new 0 0 31.494 31.494;" xml:space="preserve">
+				<path style="fill:#fff;" d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+					c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+					c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"/>
+			</svg>
+		</button>
+	</div>
+	<h1 class="h1 title title-left b-chat__title-wrap">
+		<div class="b-chat__avatar" ng-if="$root.crmUser">
+			<img class="b-chat__picture" fx-avatar="{{$root.crmUser.partner_id}}" alt="" />
+		</div>
+		<div class="b-chat__title" ng-if="$root.crmUser">
+			{{$root.crmUser.name | crm : $root.crmUser.partner_id}}
+		</div>
+	</h1>
+	<div class="buttons b-btn" ng-if="$root.crmUser && inRole('Users') && $root.crmUser.partner_id != 98164 && $root.crmUser.partner_id != 7478">
+		<button class="b-btn__container b-btn__container_row hideOnSearchInput" ng-click="$root.showToolbarNav()">
+			<i class="b-btn__icon b-btn__icon_ionic ion-more"></i>
+		</button>
+	</div>
+</ion-header-bar>
+<ion-content class="b-chat__body">
+	<div class="b-chat__row" ng-repeat="row in vm.dialog" ng-class="{'b-chat__row_right' : row.side == 'to'}">
+		<div class="b-chat__message-wrap" ng-class="{'b-chat__message-wrap_right' : row.side == 'to'}">
+			<div class="b-chat__arrow-wrap b-chat__arrow-wrap_left" ng-if="row.side == 'from'">
+				<svg class="b-chat__arrow b-chat__arrow_left" width="15" height="15">
+					<polygon points="0,15 15,0 15,15" stroke="rgba(0,0,0,.1)" stroke-width=".5" />
+				</svg>
+			</div>
+			<div class="b-chat__arrow-wrap b-chat__arrow-wrap_right" ng-if="row.side == 'to'">
+				<svg class="b-chat__arrow b-chat__arrow_right" width="15" height="15">
+					<polygon points="0,0 0,15 15,15" stroke="rgba(0,0,0,.1)" stroke-width=".5" />
+				</svg>
+			</div>
+			<div class="b-chat__desk" ng-class="{'b-chat__desk_dark' : row.side == 'to'}"
+				 ng-click="vm.goToRef(row.params)" ng-bind-html="row.text"></div>
+			<div class="b-chat__date">{{row.date | altDate}}</div>
+		</div>
+	</div>
+</ion-content>
+<ion-footer-bar class="footer-bar-chat">
+	<!--<ion-toolbar ng-style="{position: vm.focus ? 'absolute' : 'fixed'}">-->
+		<div class="b-chat__input-wrap" >
+			<!--<div class="b-chat__file-wrap" style="opacity: 0;">
+                <svg class="b-chat__file" version="1.1" x="0px" y="0px"  viewBox="0 0 1434 1434">
+                    <path d="M606.3,130.9c168.9-168.9,450.1-168.9,618.9,0s168.9,450.1,0,618.9l-590.9,591.2
+                        c-123.9,123.9-326.5,123.9-450.1,0s-123.9-326.5,0-450.1l478.2-478.8c78.7-78.7,202.6-78.7,281.5,0s78.7,202.6,0,281.5l-422,422
+                        l-84.3-84.3l421.7-422c33.7-33.7,33.7-78.7,0-112.7c-33.7-33.7-78.7-33.7-112.7,0L268.3,975.3c-78.7,78.7-78.7,202.6,0,281.5
+                        c78.7,79,202.6,78.7,281.5,0L1141,665.6c123.9-123.9,123.9-326.5,0-450.1s-326.5-123.9-450.1,0l-535,534.4l-84.3-84.3L606.3,130.9
+                        z"/>
+                </svg>
+            </div>-->
+
+			<div class="b-chat__textarea-wrap">
+				<input  class="b-chat__textarea fz-17" name="message" id="message" ng-model="vm.msg"
+						placeholder="Введите сообщение" ng-focus="checkHeight()" ng-blur="checkHeight()"/>
+			</div>
+
+			<div class="b-chat__send-btn" ng-click="vm.send(vm.msg)">
+				<svg class="b-chat__send-btn-pic" version="1.1" x="0px" y="0px" width="535.5px" height="535.5px" viewBox="0 0 535.5 535.5">
+					<polygon points="0,497.25 535.5,267.75 0,38.25 0,216.75 382.5,267.75 0,318.75"/>
+				</svg>
+			</div>
+		</div>
+	<!--</ion-toolbar>-->
+</ion-footer-bar>
+

@@ -1,0 +1,64 @@
+<ion-header-bar class="bar-stable bar bar-header bar-assertive b-header b-login">
+
+	<div class="buttons b-btn">
+		<button class="b-btn__container" ng-click="vm.backToPrevState()">
+			<svg class="b-btn__icon android-visible" version="1.1" x="0px" y="0px"
+				 width="408px" height="408px" viewBox="0 0 408 408">
+				<path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"/>
+			</svg>
+			<svg class="b-btn__icon ios-visible" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 		viewBox="0 0 31.494 31.494" style="enable-background:new 0 0 31.494 31.494;" xml:space="preserve">
+				<path style="fill:#fff;" d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+				  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+				  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"/>
+			</svg>
+		</button>
+	</div>
+
+	<h1 class="h1 title title-left b-login__title">Указать консультанта</h1>
+
+</ion-header-bar>
+
+<ion-content class="content b-login__content">
+
+	<div class="b-login__block">
+		
+		<div class="b-login__logo b-login__logo_small">
+			<img class="b-login__img" src="./img/logo.png" alt="" ng-if="!vm.consultantEnable" />
+			<img class="b-login__avatar" ng-src="{{vm.avatar}}" alt="" ng-if="vm.consultantEnable"/>
+		</div>
+
+		<div class="b-login__sub-title" ng-if="!vm.consultantEnable">
+			Укажите вашего консультанта
+		</div>
+
+		<div class="b-login__sub-title" ng-if="vm.consultantEnable">
+			{{vm.fio}}
+		</div>
+
+		<div class="b-input-wraper" ng-class="{'mb-17' : vm.anonymous}">
+			<input  id="number" type="text" class="b-input-wraper__input fz-17" ng-model="vm.number" ng-change="vm.search()"
+					ng-class="{'md-valid' : vm.number}">
+			<label for="number" class="b-input-wraper__label fz-17">Номер консультанта</label>
+			<span class="b-input-wraper__line"
+				ng-class="{'b-input-wraper__line_active' : vm.number}"></span>
+		</div>
+
+		<div class="b-input-wraper" ng-if="vm.consultantEnable && vm.anonymous">
+			<input  id="name" type="text" class="b-input-wraper__input fz-17" ng-model="vm.name"
+					ng-class="{'md-valid' : vm.name}">
+			<label for="name" class="b-input-wraper__label fz-17">Как к Вам обращаться?</label>
+			<span class="b-input-wraper__line"
+				  ng-class="{'b-input-wraper__line_active' : vm.name}"></span>
+		</div>
+
+		<div class="b-button-block" ng-if="vm.consultantEnable">
+			<button class="button button-assertive b-button-block__button b-button-block__button_no-offset  b-button-block__button_large"
+					ng-click="vm.send()">
+				Да, все верно
+			</button>
+		</div>
+
+	</div>
+
+</ion-content>

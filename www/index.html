@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="./css/ionic.app.min.css" rel="stylesheet" />
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/moment/locale/ru.js"></script>
+    <script src='lib/ngstorage/ngStorage.js'></script>
+
+
+    <!-- your app's js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.run.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/versions.constants.js"></script>
+
+    <script src='lib/ionic-native/ionic.native.js'></script>
+    <script src='lib/firebase/firebase.js'></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <script src="lib/ionic-datepicker-fork-ionic1/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src='lib/angular-resource/angular-resource.js'></script>
+    <script src='lib/angular-i18n/angular-locale_ru.js'></script>
+
+    <!-- firebase -->
+    <script src="app/firebase/firebase.constants.js"></script>
+    <script src="app/firebase/firebase.run.js"></script>
+    <script src="app/firebase/firebase-auth.service.js"></script>
+    <script src="app/firebase/firebase-cities.service.js"></script>
+    <script src="app/firebase/firebase-events.service.js"></script>
+
+    <!-- directives -->
+    <script src="app/directives/fx-image.directive.js"></script>
+    <script src="app/directives/fx-recaptcha.directive.js"></script>
+
+    <!-- services -->
+    <script src="app/services/api.service.js"></script>
+    <script src="app/services/app.service.js"></script>
+    <script src="app/services/auth.service.js"></script>
+    <script src="app/services/catalog.service.js"></script>
+    <script src="app/services/currencies.service.js"></script>
+    <script src="app/services/dictionary.service.js"></script>
+    <script src="app/services/fx.service.js"></script>
+    <script src="app/services/icons.service.js"></script>
+    <script src="app/services/images.service.js"></script>
+    <script src="app/services/tests.service.js"></script>
+    <script src="app/services/crm.service.js"></script>
+    <script src="app/services/user.service.js"></script>
+
+    <script src="app/templates/main.controller.js"></script>
+
+    <script src="app/templates/navigation/navigation.module.js"></script>
+    <script src="app/templates/navigation/navigation.controller.js"></script>
+
+    <script src="app/templates/toolbar/toolbarNav.module.js"></script>
+    <script src="app/templates/toolbar/toolbarNav.controller.js"></script>
+
+    <script src="app/templates/start/start.module.js"></script>
+    <script src="app/templates/start/start.controller.js"></script>
+
+    <script src="app/templates/offline/offline.module.js"></script>
+    <script src="app/templates/offline/offline.controller.js"></script>
+
+    <script src="app/templates/catalog/catalog.module.js"></script>
+    <script src="app/templates/catalog/catalog.controller.js"></script>
+
+    <script src="app/templates/login/login.module.js"></script>
+    <script src="app/templates/login/auth/auth.controller.js"></script>
+    <script src="app/templates/login/dist/dist.controller.js"></script>
+    <script src="app/templates/login/consul/consul.controller.js"></script>
+
+    <script src="app/templates/category/category.module.js"></script>
+    <script src="app/templates/category/category.controller.js"></script>
+
+    <script src="app/templates/product/product.module.js"></script>
+    <script src="app/templates/product/product.controller.js"></script>
+
+    <script src="app/templates/selection/selection.module.js"></script>
+    <script src="app/templates/selection/selection.controller.js"></script>
+
+    <script src="app/templates/filter/filter.module.js"></script>
+    <script src="app/templates/filter/filter.controller.js"></script>
+
+    <script src="app/templates/messages/messages.module.js"></script>
+    <script src="app/templates/messages/messages.controller.js"></script>
+
+    <script src="app/templates/chat/chat.module.js"></script>
+    <script src="app/templates/chat/chat.controller.js"></script>
+
+    <script src="app/templates/test/test.module.js"></script>
+    <script src="app/templates/test/test.constants.js"></script>
+    <script src="app/templates/test/test.controller.js"></script>
+
+    <script src="app/templates/result/result.module.js"></script>
+    <script src="app/templates/result/result.controller.js"></script>
+
+    <script src="app/templates/history/history.module.js"></script>
+    <script src="app/templates/history/history.controller.js"></script>
+
+    <script src="app/templates/private/private.module.js"></script>
+    <script src="app/templates/private/private.controller.js"></script>
+
+  </head>
+  <body ng-app="app" class="platform-universal" ng-controller="indexCntr as vm">
+
+    <ion-pane ui-view="main"></ion-pane>
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<div class="b-category__wrap b-category__wrap_include">
+
+	<div class="b-category__card" ng-repeat="product in vm.products | orderBy : 'name'"
+		 ui-sref="app.main.product({id : product.id})">
+
+		<div class="b-category__picture-wrap">
+			<img class="b-category__picture" fx-image="{{product.id}}" type="goods"/>
+		</div>
+
+		<div class="b-category__main-info">
+			<div class="b-category__title">
+				{{product.name}}
+			</div>
+			<div class="b-category__price">
+				{{product.price | currencies}}
+			</div>
+			<div class="b-category__desk" ng-bind-html="product.description">
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="!vm.products.length">
+		<div class="card b-card-tab__catalog b-category-goods">
+			<div class="b-category-goods__title" >
+				По Вашему запросу ничего не найдено
+			</div>
+		</div>
+	</div>
+
+</div>

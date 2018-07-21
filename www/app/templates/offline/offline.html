@@ -1,0 +1,45 @@
+<ion-content class="content b-login__content">
+
+	<div class="b-login__block">
+
+		<div class="b-login__logo_large">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" version="1.1">
+				<g id="surface1">
+					<path style=" fill:#E4597F;" d="M 24 29 C 21.792969 29 20 27.203125 20 25 C 20 22.796875 21.792969 21 24 21 C 26.207031 21 28 22.796875 28 25 C 28 27.203125 26.207031 29 24 29 Z "></path>
+					<path style=" fill:#E4597F;" d="M 31.808594 34.355469 L 28.925781 31.582031 L 29.957031 30.40625 C 31.273438 28.910156 32 26.992188 32 25 C 32 22.996094 31.273438 21.070313 29.953125 19.582031 L 28.628906 18.085938 L 31.621094 15.433594 L 32.949219 16.929688 C 34.914063 19.148438 36 22.015625 36 25 C 36 27.964844 34.921875 30.824219 32.960938 33.050781 Z "></path>
+					<path style=" fill:#E4597F;" d="M 16.457031 34.582031 L 15.117188 33.097656 C 13.105469 30.863281 12 27.972656 12 24.953125 C 12 21.996094 13.074219 19.140625 15.023438 16.921875 L 16.34375 15.417969 L 19.347656 18.054688 L 18.03125 19.558594 C 16.722656 21.050781 16 22.96875 16 24.953125 C 16 26.984375 16.742188 28.925781 18.089844 30.421875 L 19.425781 31.90625 Z "></path>
+					<path style=" fill:#E4597F;" d="M 37.570313 40.125 L 34.71875 37.3125 L 35.722656 36.191406 C 38.480469 33.113281 40 29.140625 40 25 C 40 20.859375 38.488281 16.886719 35.742188 13.8125 L 34.410156 12.324219 L 37.394531 9.65625 L 38.726563 11.148438 C 42.128906 14.957031 44 19.875 44 25 C 44 30.125 42.117188 35.046875 38.703125 38.863281 Z "></path>
+					<path style=" fill:#E4597F;" d="M 10.625 40.34375 L 9.292969 38.855469 C 5.878906 35.046875 4 30.117188 4 24.980469 C 4 19.871094 5.871094 14.957031 9.269531 11.148438 L 10.601563 9.65625 L 13.585938 12.320313 L 12.253906 13.8125 C 9.511719 16.886719 8 20.855469 8 24.980469 C 8 29.132813 9.515625 33.109375 12.269531 36.1875 L 13.605469 37.675781 Z "></path>
+					<path style="fill:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;stroke:#849098;stroke-opacity:1;stroke-miterlimit:10;" d="M 5 5 L 43 43 "></path>
+				</g>
+			</svg>
+		</div>
+
+		<h3 class="text-center">Нет соединения с интернетом</h3>
+
+		<p class="light-gray mb-20">Страница недоступна в режиме offline</p>
+
+		<div class="b-button-block">
+			<button class="button button-assertive b-button-block__button b-button-block__button_no-offset  b-button-block__button_large mb-10"
+					ng-click="vm.refresh()">
+				Попробовать еще раз
+			</button>
+		</div>
+
+		<div class="b-button-block">
+			<button class="button button-assertive b-button-block__button b-button-block__button_no-offset  b-button-block__button_large  mb-10"
+					ng-click="vm.toMainState()">
+				На главный экран
+			</button>
+		</div>
+
+		<div class="b-button-block">
+			<button class="button b-button-block__button b-button-block__button_no-offset  b-button-block__button_large  mb-10"
+					ng-click="vm.exit()">
+				Выход из приложения
+			</button>
+		</div>
+
+	</div>
+
+</ion-content>

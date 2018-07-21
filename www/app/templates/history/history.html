@@ -1,0 +1,145 @@
+<ion-header-bar class="bar-stable bar bar-header bar-assertive b-header b-result">
+
+	<div class="buttons b-btn hideOnSearchInput">
+		<button class="b-btn__container" ng-click="vm.backToPrevState()">
+      <svg class="b-btn__icon android-visible" version="1.1" x="0px" y="0px"
+           width="408px" height="408px" viewBox="0 0 408 408">
+        <path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"/>
+      </svg>
+      <svg class="b-btn__icon ios-visible" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 31.494 31.494" style="enable-background:new 0 0 31.494 31.494;" xml:space="preserve">
+        <path style="fill:#fff;" d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+          c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+          c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"/>
+        </svg>
+		</button>
+	</div>
+
+	<h1 class="h1 title title-left b-result__title">{{vm.title}}</h1>
+
+	<div class="buttons b-btn b-btn__slide-input-wrap android-visible">
+		<button class="b-btn__container b-btn__container_row" ng-click="$root.showToolbarNav()">
+			<i class="b-btn__icon b-btn__icon_ionic ion-more"></i>
+		</button>
+	</div>
+
+</ion-header-bar>
+
+<ion-content class="content b-result">
+	<div class="b-result__card b-result__card_main"
+		 ng-if="vm.crmUser">
+		<!--<div class="b-result__card-picture b-result__card-picture_round">
+			<img class="b-result__card-img" src="./img/sidebar/userSidebarCover.png" alt="" />
+		</div>-->
+		<div class="b-result__card-info-wrap full-w">
+			<div class="b-result__card-phone">
+				Проходили с устройства реферала:
+			</div>
+      <div class="b-result__card-subtitle">
+        <a href="tel:{{vm.crmUser.phone}}">
+          {{vm.crmUser.name}}
+          <span class="b-result__card-subtitle-span" ng-if="vm.crmUser.name != vm.crmUser.phone">({{vm.crmUser.phone}})</span>
+          <span class="icon-phone">
+            <svg class="b-result__birthday-icon" version="1.1" x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459">
+            <path d="M91.8,198.9c35.7,71.4,96.9,130.05,168.3,168.3L316.2,311.1c7.649-7.649,17.85-10.199,25.5-5.1 c28.05,10.2,58.649,15.3,91.8,15.3c15.3,0,25.5,10.2,25.5,25.5v86.7c0,15.3-10.2,25.5-25.5,25.5C193.8,459,0,265.2,0,25.5 C0,10.2,10.2,0,25.5,0h89.25c15.3,0,25.5,10.2,25.5,25.5c0,30.6,5.1,61.2,15.3,91.8c2.55,7.65,0,17.85-5.1,25.5L91.8,198.9z"/>
+          </svg></span>
+
+        </a>
+      </div>
+		</div>
+		<div class="b-result__card-contacts">
+			<!-- <div class="b-result__card-message">
+				<i class="ion-icon ion-android-mail"></i>
+			</div>
+
+			<div class="b-result__card-call">
+				<svg class="b-result__call-icon" version="1.1" x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459">
+					<path d="M91.8,198.9c35.7,71.4,96.9,130.05,168.3,168.3L316.2,311.1c7.649-7.649,17.85-10.199,25.5-5.1 c28.05,10.2,58.649,15.3,91.8,15.3c15.3,0,25.5,10.2,25.5,25.5v86.7c0,15.3-10.2,25.5-25.5,25.5C193.8,459,0,265.2,0,25.5 C0,10.2,10.2,0,25.5,0h89.25c15.3,0,25.5,10.2,25.5,25.5c0,30.6,5.1,61.2,15.3,91.8c2.55,7.65,0,17.85-5.1,25.5L91.8,198.9z"/>
+				</svg>
+			</div> -->
+		</div>
+	</div>
+
+	<div class="b-result__row">
+		<div class="b-result__sub-title">
+			{{(vm.history && vm.history.length) ? "История подборов" : "Вы пока не подбирали ароматы"}}
+		</div>
+	</div>
+
+	<!-- repeat -->
+
+	<div class="b-result__card b-result__card_column b-result__card_offset" ng-repeat="row in vm.history | orderBy : 'add_date' : 'desc'">
+		<div class="b-result__card-row" ng-click="showPsychotype = !showPsychotype">
+			<div class="b-result__card-title" ng-class="{'b-result__card-title_accent' : showPsychotype}">
+				{{row.fio}}
+			</div>
+
+			<div class="b-result__card-date-wrap">
+				<span class="b-result__card-date b-result__card-date_accent">{{row.add_date | altDate }}</span>
+				<i class="b-result__card-icon ion-icon" ng-class="{'ion-chevron-down' : !showPsychotype, 'ion-chevron-up b-result__card-icon_accent' : showPsychotype }"></i>
+			</div>
+		</div>
+
+		<div class="b-result__card-column b-result__card-hidden-info" ng-if="showPsychotype">
+			<div class="b-result__card-row">
+				<div class="b-result__birthday-wrap">
+					<div class="b-result__birthday-icon-wrap" ng-if="row.birthday">
+						<svg class="b-result__birthday-icon" version="1.1" x="0px" y="0px" width="561px" height="561px" viewBox="0 0 561 561">
+							<path d="M280.5,114.75c20.4,0,38.25-17.85,38.25-38.25c0-7.65-2.55-12.75-5.1-20.4L280.5,0l-33.15,56.1 c-2.55,5.1-5.1,12.75-5.1,20.4C242.25,96.9,260.1,114.75,280.5,114.75z M446.25,178.5H306v-38.25h-51v38.25H114.75 C51,178.5,0,229.5,0,293.25c0,40.8,20.4,73.95,51,94.35V561h459V387.6c30.6-20.399,51-56.1,51-94.35 C561,229.5,510,178.5,446.25,178.5z M446.25,357c-17.85,0-33.15-7.65-45.9-17.85L362.1,300.9l-38.25,38.25 C313.65,349.35,298.35,357,280.5,357c-17.85,0-33.15-7.65-45.9-17.85l-38.25-38.25l-38.25,38.25 C147.9,349.35,132.6,357,114.75,357C79.05,357,51,328.95,51,293.25s28.05-63.75,63.75-63.75h331.5c35.7,0,63.75,28.05,63.75,63.75 S481.95,357,446.25,357z"/>
+						</svg>
+					</div>
+					<div class="b-result__birthday-data" ng-if="row.birthday">
+						{{row.birthday * 1000 | date : 'dd.MM.yyyy'}}
+					</div>
+				</div>
+				<div class="b-result__birthday-wrap">
+					  <a href="tel:{{row.phone}}" style="text-decoration: none">
+							<span class="b-result__birthday-icon-wrap b-result__birthday-icon-wrap_top">
+								<svg class="b-result__birthday-icon" version="1.1" x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459">
+									<path d="M91.8,198.9c35.7,71.4,96.9,130.05,168.3,168.3L316.2,311.1c7.649-7.649,17.85-10.199,25.5-5.1 c28.05,10.2,58.649,15.3,91.8,15.3c15.3,0,25.5,10.2,25.5,25.5v86.7c0,15.3-10.2,25.5-25.5,25.5C193.8,459,0,265.2,0,25.5 C0,10.2,10.2,0,25.5,0h89.25c15.3,0,25.5,10.2,25.5,25.5c0,30.6,5.1,61.2,15.3,91.8c2.55,7.65,0,17.85-5.1,25.5L91.8,198.9z"/>
+								</svg>
+							</span>
+							<span class="b-result__birthday-data b-result__birthday-data_padding">
+								{{+row.phone || "Телефон не указан"}}
+							</span>
+					  </a>
+				</div>
+			</div>
+
+			<div class="b-result__card-row b-result__card-row_bottom b-result__card-row_start" ng-repeat="collection in row.collections">
+				<div class="b-result__label">
+					{{collection.name}}
+				</div>
+				<div class="b-result__aromat-number-wrap">
+					<div class="b-result__aromat-number-item" ng-repeat="item in collection.goods track by item.id"
+						 ng-style="{ 'background-color' : item.color }" ui-sref="app.main.product({id : item.id})">
+						{{item.number}}
+					</div>
+				</div>
+			</div>
+            <div class="b-result__act">
+                <div class="b-result__act-wrap __half pt-10-media">
+                    <div class="b-result__birthday-icon-wrap">
+                        <svg class="b-result__birthday-icon" viewBox="0 0 24 24" version="1.1">
+                            <path style=" fill-rule:evenodd;" d="M 12 0 C 10.695313 0 9.582031 0.835938 9.171875 2 L 5 2 C 3.910156 2 3 2.910156 3 4 L 3 20 C 3 21.089844 3.910156 22 5 22 L 19 22 C 20.089844 22 21 21.089844 21 20 L 21 4 C 21 2.910156 20.089844 2 19 2 L 14.828125 2 C 14.417969 0.835938 13.304688 0 12 0 Z M 12 2 C 12.550781 2 13 2.449219 13 3 C 13 3.550781 12.550781 4 12 4 C 11.449219 4 11 3.550781 11 3 C 11 2.449219 11.449219 2 12 2 Z M 5 4 L 7 4 L 7 7 L 17 7 L 17 4 L 19 4 L 19 20 L 5 20 Z M 16.890625 9.234375 L 15.121094 11 L 14.0625 9.9375 L 13 11 L 15.121094 13.121094 L 17.949219 10.292969 Z M 7 10 L 7 12 L 12 12 L 12 10 Z M 16.890625 14.234375 L 15.121094 16 L 14.0625 14.9375 L 13 16 L 15.121094 18.121094 L 17.949219 15.292969 Z M 7 15 L 7 17 L 12 17 L 12 15 Z "></path>
+                        </svg>
+                    </div>
+                    <div class="b-result__act-data __bb">
+                        <a class="none-decoration _lh-55" ui-sref="app.main.test.result({gender:row.gender, answer:row.result_id})">Страница результата</a>
+                    </div>
+                </div>
+                <div class="b-result__act-wrap __half pt-10" >
+                    <div class="b-result__birthday-icon-wrap b-result__birthday-icon-wrap_top">
+                        <svg class="b-result__birthday-icon" viewBox="1 1 23 23" version="1.1">
+                            <path d="M 10 3 L 9 4 L 5 4 L 5 6 L 19 6 L 19 4 L 15 4 L 14 3 Z M 6 7 L 6 20 C 6 21.101563 6.898438 22 8 22 L 16 22 C 17.101563 22 18 21.101563 18 20 L 18 7 Z M 9 10 L 11 10 L 11 19 L 9 19 Z M 13 10 L 15 10 L 15 19 L 13 19 Z "></path>
+                        </svg>
+                    </div>
+                    <div class="b-result__act-data">
+                        <a ng-click="vm.delete(row.id)">Удалить результат</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+	</div>
+</ion-content>

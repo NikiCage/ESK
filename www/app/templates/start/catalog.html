@@ -1,0 +1,31 @@
+<ion-header-bar class="bar-stable bar bar-header bar-assertive b-header start">
+
+
+
+	<div class="buttons">
+		<button class="button button-icon icon ion-navicon android-visible" ng-click="toggleLeft()"></button>
+	</div>
+
+	<h1 class="h1 title title-left">Armelle Online</h1>
+
+	<!-- <button class="button button-assertive icon-left ion-android-mail b-header__btn">
+		3
+	</button> -->
+
+</ion-header-bar>
+
+<ion-content has-bouncing="false" scroll="false" class="content start-page">
+
+	<div class="card b-card-tab b-card-tab_welcome" ng-repeat="event in vm.events">
+		<div class="b-card-tab__title b-card-tab__title_welcome">
+			{{event.title}}
+		</div>
+		<img ng-src="{{event.img}}"/>
+		<div class="b-card-tab__text b-card-tab__text_left">
+			{{event.description}}
+		</div>
+	</div>
+
+</ion-content>
+
+<bottom-bar></bottom-bar>

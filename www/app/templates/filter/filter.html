@@ -1,0 +1,52 @@
+<div id="filter" class="b-filter">
+
+	<div class="b-filter__overlay" ng-show="vm.submenu" ng-click="vm.submenu = false" ng-style="{height: vm.height + 'px'}"></div>
+
+	<div class="b-filter__toolbar">
+		<div class="b-filter__toolbar-btn" ng-click="vm.reset()">
+			сброс
+		</div>
+		<div class="b-filter__toolbar-btn b-filter__toolbar-btn_accent" ng-click="vm.send()">
+			готово
+		</div>
+	</div>
+
+	<div class="b-filter__row" ng-repeat="field in vm.filter.fields">
+		<div class="b-filter__wrap" ng-click="vm.submenu = field.id; vm.calcOverlayHeight()">
+			<div class="b-filter__type">
+				{{field.title}}
+			</div>
+			<div class="b-filter__btn" ng-if="field.type == 'relation'">
+				{{field.display ? field.display : 'выберите'}}
+			</div>
+			<div class="b-filter__sub-menu" ng-show="vm.submenu == field.id">
+				<div class="b-checkbox">
+					<label class="b-checkbox__label" for="{{item.id}}" ng-repeat="(i,item) in field.data track by item.id">
+						<input ng-if="field.type == 'relation'"
+								class="b-checkbox__input" id="{{item.id}}" type="radio"
+								ng-model="field.select" ng-value="item" ng-change="field.display = item.name"/>
+						<input ng-if="field.type == 'multitype'"
+								class="b-checkbox__input" id="{{item.id}}" type="checkbox"
+								ng-model="field.model[i]" ng-change="field.select[i] = (field.model[i] && item) || undefined"/>
+						<span class="b-checkbox__item">{{item.name}}</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="b-filter__wrap-tags" ng-if="field.type == 'multitype'">
+			<div class="b-filter__tag" ng-repeat="tag in field.select track by $index" ng-if="tag"
+				 ng-click="vm.filter.removeTag(field, $index)">
+				<div class="b-filter__tag-text">
+					{{tag.name}}
+				</div>
+				<div class="b-filter__tag-icon__wrap">
+					<svg class="b-filter__tag-icon" version="1.1" x="0px" y="0px"
+						 width="357px" height="357px" viewBox="0 0 357 357">
+						<polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 214.2,178.5"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
