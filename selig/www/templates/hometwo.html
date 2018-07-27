@@ -1,0 +1,134 @@
+<ion-view>
+
+    <div class="bar has-tabs-top bar-header bar-positive">
+        <h1 class="title">Home</h1>
+    </div>
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+        <div class="tabs">
+            <a class="tab-item {{classa}}" ng-click="tabchange('text',1)">
+                <span>Popular</span>
+            </a>
+            <a class="tab-item {{classb}}" ng-click="tabchange('photos',2)">
+                <span>Latest</span>
+            </a>
+            <a class="tab-item {{classc}}" ng-click="tabchange('link',3)">
+                <span>Featured</span>
+            </a>
+        </div>
+    </div>
+
+    <ion-content class="has-tabs-top" overflow-scroll="false">
+
+        <div class="popular" ng-show="tab=='text'">
+            <!--            <a href="#/app/articles">-->
+            <!--
+            <a>
+                <div class="popular-set" collection-repeat="txt in text">
+                    <figure ng-click="postDetail(txt.meta.links.self)">
+
+                        <img ng-src="{{txt.author.avatar_URL}}" alt="{{txt.imagename}}" class="full-image">
+                        <div class="layer">
+                            <figcaption class="blog-name">{{txt.slug}}</figcaption>
+                        </div>
+                    </figure>
+                </div>
+            </a>
+-->
+
+            <!--           new ui for wordpress-->
+            <div class="post-list">
+                <div class="list card margin-tp" ng-repeat="txt in text">
+
+                    <div class="item item-avatar post-head">
+                        <img src="{{txt.author.avatar_URL}}">
+                        <h2>{{txt.slug}}</h2>
+<!--                        <p>November 05, 1955</p>-->
+                        <p>{{txt.date | date:"MMMM dd, yyyy"}}</p>
+                    </div>
+
+                    <div class="item item-body word-content">
+                        <!--    <img class="full-image" src="delorean.jpg">-->
+                        <p ng-bind-html="txt.content | cut:true:300:'...'| rawHtml ">
+<!--                            This is a "Facebook" styled Card. The header is created from a Thumbnail List item, the content is from a card-body consisting of an image and paragraph text. The footer consists of tabs, icons aligned left, within the card-footer.-->
+                        </p>
+                        <div class="post-actions row">
+                            <div class="actions col col-center col-66">
+
+                            </div>
+                            <div class="read-more col col-center col-33">
+                                <a ng-click="postDetail(txt.meta.links.self)" class="button button-small button-block button-positive">
+                Read more
+              </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="latest" ng-show="tab=='photos'">
+                  <div class="post-list">
+                <div class="list card margin-tp" ng-repeat="txt in photo">
+
+                    <div class="item item-avatar post-head">
+                        <img src="{{txt.author.avatar_URL}}">
+                        <h2>{{txt.slug}}</h2>
+<!--                        <p>November 05, 1955</p>-->
+                        <p>{{txt.date | date:"MMMM dd, yyyy"}}</p>
+                    </div>
+
+                    <div class="item item-body word-content">
+                        <!--    <img class="full-image" src="delorean.jpg">-->
+                        <p ng-bind-html="txt.content | cut:true:300:'...'| rawHtml ">
+<!--                            This is a "Facebook" styled Card. The header is created from a Thumbnail List item, the content is from a card-body consisting of an image and paragraph text. The footer consists of tabs, icons aligned left, within the card-footer.-->
+                        </p>
+                        <div class="post-actions row">
+                            <div class="actions col col-center col-66">
+
+                            </div>
+                            <div class="read-more col col-center col-33">
+                                <a ng-click="postDetail(txt.meta.links.self)" class="button button-small button-block button-positive">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="featured" ng-show="tab=='link'">
+                <div class="post-list">
+                <div class="list card margin-tp" ng-repeat="txt in link">
+
+                    <div class="item item-avatar post-head">
+                        <img src="{{txt.author.avatar_URL}}">
+                        <h2>{{txt.slug}}</h2>
+                        <p>{{txt.date | date:"MMMM dd, yyyy"}}</p>
+                    </div>
+
+                    <div class="item item-body word-content">
+                        <!--    <img class="full-image" src="delorean.jpg">-->
+                        <p ng-bind-html="txt.content | cut:true:300:'...'| rawHtml ">
+<!--                            This is a "Facebook" styled Card. The header is created from a Thumbnail List item, the content is from a card-body consisting of an image and paragraph text. The footer consists of tabs, icons aligned left, within the card-footer.-->
+                        </p>
+                        <div class="post-actions row">
+                            <div class="actions col col-center col-66">
+
+                            </div>
+                            <div class="read-more col col-center col-33">
+                                <a ng-click="postDetail(txt.meta.links.self)" class="button button-small button-block button-positive">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

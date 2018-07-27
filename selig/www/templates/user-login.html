@@ -1,0 +1,53 @@
+<ion-view ng-controller="LoginJagruti">
+    <ion-content overflow-scroll="true" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+        <div class="login-set">
+            <img src="img/logo.png" class="img-responsive">
+        </div>
+
+        <div class="login-content">
+            <div class="list login-user">
+                <label class=" item-input">
+                    <i class="icon ln-user"></i>
+                    <input type="text" placeholder="Username">
+                </label>
+                <label class=" item-input">
+                    <i class="icon ln-lock"></i>
+                    <input type="password" placeholder="Password">
+                </label>
+                <p class="login-forget pull-right">Forgot Password</p>
+            </div>
+            <div class="login footer">
+                <div class="login-btn btn-set">
+                    <a href="#/app/home">
+                        <button class="button button-full button-positive button-block">
+                            Sign in
+                        </button>
+                    </a>
+                </div>
+                <div class="or text-center">
+                    <p>- OR -</p>
+                </div>
+                 <div class="login-btn btn-set">
+                  
+                        <button  ng-click="facebooklogin()" class="button button-full button-positive-facebook button-block">
+                            Sign in With Facebook
+                        </button>
+                  
+                </div>
+                 <div class="login-btn btn-set">
+                    
+                        <button ng-click="twitterlogin()" class="button button-full button-positive-twitter button-block">
+                            Sign in With Twitter
+                        </button>
+                   
+                </div>
+                <div class="sign text-center">
+                    <span>Don’t have an account?<a href="#/user-signup">Sign Up</a></span>
+                </div>
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,745 @@
+// ****** Customization Blue Color For App *******
+
+// $positive:                       #9c28b1 !default;
+
+//****** End ******
+
+// ****** Customization Red Color For App *******
+
+// $positive:                       #E84C3D !default;
+
+//****** End ******
+
+// ****** Customization Green Color For App *******
+
+// $positive:                       #27a01f !default;
+
+//****** End ******
+
+ $positive:                       #9C27B0 !default;
+ $calm:                           #03A9F4 !default;
+ $stable:                         transparent !default;
+ $base-color:                     #212121 !default;
+ $icon-color:                     #7a7a7a !default;
+ $link-color:                     #909090 !default;
+ $light-grey:                     #eeeeee !default;
+ $font-family-sans-serif:         "Lato","Helvetica Neue","Roboto","Segoe UI",sans-serif !default;
+ $font-family-light-sans-serif:   "Lato","HelveticaNeue-Light","Roboto-Light","Segoe UI-Light",sans-serif-light !default;
+ $light:                          #fff !default;
+ $input-color-placeholder:        #212121 !default;
+ $lato-font-weight:               300 !default;
+ $button-stable-text:             #fff !default;
+ $headings-font-weight:           500 !default;
+ $texts-font-size:                14px !default;
+ $input-padding:                  4px 0px 0px 3px !default;
+ $pad-font-size:                  13px !default;
+ $button-stable-border:           transparent !default;
+ $background-menu:                url('../img/side-menu.png');
+ $sign-bg-image:                  url('../img/sign-back.png') no-repeat center center;
+ $contact-bg-image:               url('../img/component/contact.png') no-repeat center center;
+ $setting-bg-image:               url('../img/component/setting.png') no-repeat center center;
+ $gallery-bg-image:               url('../img/component/gallery.png') no-repeat center center;
+ $gallery2-bg-image:              url('../img/component/gallery2.png') no-repeat center center;
+ $about-bg-image:                 url('../img/component/about.png') no-repeat center center;
+ $faq-bg-image:                   url('../img/component/faq.png') no-repeat center center;
+ $home-bg-image:                  url('../img/component/home.png') no-repeat center center;
+ $artical-bg-image:               url('../img/component/artical.png') no-repeat center center;
+ $profiles-bg-image:               url('../img/component/profilebk.png') no-repeat center center;
+ $bar-stable-bg:                  transparent !default;
+
+
+@mixin transition($transition-property, $transition-time) {
+    -webkit-transition: $transition-property $transition-time;
+    -moz-transition: $transition-property $transition-time;
+    -ms-transition: $transition-property $transition-time;
+    -o-transition: $transition-property $transition-time;
+    transition: $transition-property $transition-time;
+}
+
+@mixin clip-path($clip) {
+  -webkit-clip-path: $clip;
+  -moz-clip-path: $clip;
+  -ms-clip-path: $clip;
+  clip-path: $clip;
+}
+
+//********  custom class ********'
+ .input-tag {
+    color: $base-color !important;
+    font-weight: $lato-font-weight;
+    font-size: $texts-font-size;
+}
+//******* End ********
+
+
+@font-face {
+    font-family: 'Lato';
+    src: url("../fonts/Lato-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato-Regular.ttf);
+}
+a,
+a:hover {
+    text-decoration: none
+}
+.login-set {
+    margin-top: 10%;
+    text-align: center;
+}
+.list.login-user .item-input {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+.list.login-user i {
+    font-size: 22px;
+    color: $icon-color;
+    margin: 0px 15px 0px 8px;
+}
+.pull-right {
+    float: right;
+}
+p.login-forget.pull-right {
+    padding: 8px 30px;
+    font-weight: $lato-font-weight;
+    color: $link-color;
+}
+.list.login-user input {
+    color: $base-color;
+}
+.login-content {
+    margin-top: 18%;
+}
+.login-user input[type="text"] {
+    @extend .input-tag;
+    padding: $input-padding;
+}
+img.img-responsive {
+    max-width: 100%;
+}
+.login-user input[type="password"] {
+    @extend .input-tag;
+    padding: 4px 0px 0px 3px;
+}
+.profile-user input[type="password"] {
+    @extend .input-tag;
+    padding: 4px 0px 0px 6px;
+}
+.login-user input[type="email"] {
+    @extend .input-tag;
+    padding: $input-padding;
+}
+.login-user input[type="date"] {
+    @extend .input-tag;
+    padding: $input-padding !important;
+}
+.login-user textarea {
+    @extend .input-tag;
+    padding: 15px 0px 0px 6px !important;
+}
+.btn-set button {
+    font-weight: $lato-font-weight;
+    text-transform: capitalize;
+    min-height: 52px;
+}
+.profile-set a {
+    color: $light;
+}
+.sign span {
+    color: $link-color;
+    font-weight: $lato-font-weight;
+    font-size: $texts-font-size;
+}
+.sign span a {
+    color: #000;
+    margin: 10px;
+}
+.signin.footer {
+    margin-top: 120px;
+}
+.login.footer {
+    margin-top: 120px;
+}
+.login-content:-webkit-placeholder {
+    color: $input-color-placeholder;
+    font-size: $pad-font-size;
+}
+.sign.text-center {
+    margin: 16px auto;
+}
+.sign-set img {
+    height: 215px;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    /* height: auto; */
+}
+.bar-side {
+    background-image: $background-menu !important;
+    height: 166px !important;
+    background-size: 100% 100% !important;
+    background-position: center, center;
+}
+.clip-polygon {
+    background: $sign-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.contact-set {
+    background: $contact-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.setting-set {
+    background: $setting-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.gallery-set {
+    background: $gallery-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.gallery2-set {
+    background: $gallery2-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.about-set {
+    background: $about-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.faq-set {
+    background: $faq-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.artical-set {
+    background: $artical-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.profiles-set {
+    background: $profiles-bg-image;
+    @include clip-path(polygon(0% 0%, 100% 0%, 100% 75%, 100% 64%, 0% 83%, 56% 64%, 0% 83%));
+    background-size: cover;
+    height: 215px;
+}
+.home-set {
+    background: $positive;
+    background-size: cover;
+    height: 45px;
+}
+.bar.bar-header.dark-green {
+    background: transparent;
+}
+input::-webkit-input-placeholder {
+    color: $base-color;
+}
+h1.title.back-arrow i {
+    float: left;
+    color: $light;
+    font-size: 36px;
+}
+h2.title {
+    color: $light;
+    font-weight: $lato-font-weight;
+    padding: 80px 22px;
+}
+h2.title-b {
+    color: $light;
+    font-weight: $lato-font-weight;
+    padding: 72px 11px 0px 22px;
+}
+h2.title-c {
+    color: $light;
+    font-weight: $lato-font-weight;
+    padding: 72px 11px 0px 22px;
+    float: left;
+}
+.has-header {
+    top: 157px;
+}
+.bar {
+    border: none;
+    background-image: $background-menu;
+    background-position: bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+}
+.bars {
+    border: none;
+    background-image: $background-menu;
+    background-position: bottom;
+    background-size: 100% 0px !important;
+    background-repeat: no-repeat;
+}
+i.icon.side-menu-i {
+    font-size: 22px !important;
+}
+i.icon.side-menu-i {
+    font-size: 22px !important;
+    color: $icon-color;
+}
+.side-menu ion-item {
+    font-size: $pad-font-size !important;
+    color: $base-color;
+}
+.item-complex.item-icon-left .item-content {
+    padding-left: 60px;
+}
+.item-icon-left {
+    padding-left: 60px;
+}
+.side-image {
+    text-align: center;
+    margin: 15px auto;
+    width: 100%;
+}
+.side-image img {
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
+.side-image figcaption {
+    color: $light;
+    font-size: 16px;
+    font-weight: $lato-font-weight;
+}
+.profile-set {
+    float: right;
+    color: $light;
+    margin: 12px 11px 0px 3px;
+    font-size: 18px;
+      z-index: 99;
+}
+.map-set p {
+    color: $light;
+    font-weight: $lato-font-weight;
+    font-size: $texts-font-size;
+    float: left;
+}
+a.map {
+    color: $light;
+    margin: $pad-font-size;
+}
+.map-active {
+    border-bottom: 2px solid $positive;
+    padding-bottom: 2px;
+}
+.contact-map h4 {
+    text-align: center;
+    color: $icon-color;
+}
+.tab-set {
+    padding-left: $pad-font-size;
+}
+img.user-pic {
+    float: right;
+    padding: 52px 32px 0px 0px;
+}
+i.icon.ion-ios-plus-empty.image-up {
+    position: absolute;
+    color: $light;
+    font-size: 20px;
+    z-index: 999999;
+    background: #50d2c2;
+    border-radius: 100%;
+    height: 22px;
+    width: 22px;
+    padding: 0px 6px;
+    top: 52px;
+    right: 37px;
+}
+li.gender-li {
+    display: inline-block;
+}
+ul.list.set-gender {
+    display: -webkit-inline-box;
+}
+span.input-label.gender-name {
+    display: block;
+    float: left;
+    margin: 4px auto;
+}
+.checkbox input,
+.checkbox-icon {
+    width: 24px !important;
+    height: 24px !important;
+}
+.checkbox {
+    padding: 7px 0px !important;
+}
+.checkbox input:after,
+.checkbox-icon:after {
+    top: 36% !important;
+    left: 14% !important;
+    width: 8px !important;
+    height: 4px !important;
+}
+li.gender-li span {
+    font-size: $pad-font-size;
+    vertical-align: super;
+    margin: 0px 18px 0px 0px;
+    color: $input-color-placeholder;
+}
+.setting-form span {
+    color: $icon-color;
+    font-size: $texts-font-size;
+}
+.setting-form:-webkit-placeholder {
+    color: $input-color-placeholder;
+}
+.setting-form .item-input {
+    padding: 0px 0px 0px 16px !important;
+}
+.item-input.first-label {
+    border: 0px;
+}
+.gallery-pos {
+    margin: 0px !important;
+}
+.set-image {
+    position: relative;
+}
+.image-set img {
+    height: auto;
+    text-align: center;
+    width: 100%;
+}
+.image-scroll {
+    background: #F6F4F4;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+figure.image-set figcaption {
+    text-align: center;
+    color: $icon-color;
+    text-transform: capitalize;
+}
+.about-us h3 {
+    font-weight: $lato-font-weight;
+    text-transform: capitalize;
+    color: $base-color;
+    margin-bottom: 35px;
+}
+.about-us p {
+    font-size: $texts-font-size;
+    font-weight: $lato-font-weight;
+}
+.about-us {
+    padding: $pad-font-size;
+}
+.know-more {
+    text-align: center;
+    margin-top: 20px;
+}
+.know-btn {
+    border: 1px solid  $positive;
+    padding: 10px 35px;
+    background: $positive;
+    color: $light;
+    font-weight: $lato-font-weight;
+}
+.know-content {
+    text-align: left;
+    height: 0px;
+     @include transition(all,1s);
+    overflow: hidden;
+}
+.ans-set.faqhead {
+    overflow: hidden;
+   @include transition(all,1s);;
+    height: 0px;
+}
+p.addanimation {
+    margin-left: 28px;
+    font-size: 80%;
+    background-color: $light-grey;
+    color: $base-color;
+    padding: 5px 10px;
+    display: block;
+}
+.showmores {
+    height: 70px !important;
+}
+.faq-content {
+    padding: $pad-font-size;
+}
+h5.qsn-set {} span.qsn {
+    font-size: 27px;
+    float: left;
+    border-right: 2px solid #c6c6c6;
+    padding: 0px 6px 0px 0px;
+    color: #c6c6c6;
+    margin: 0px 10px 0px 0px;
+    font-weight: 400 !important;
+    line-height: 134%
+}
+h5.qsn-set {
+    font-weight: $lato-font-weight;
+    line-height: 134%;
+}
+.faq-content h4 {
+    font-weight: $lato-font-weight;
+    margin-bottom: 40px;
+    border: 1px solid $positive;
+    padding: 7px;
+    background: $positive;
+    color: $light;
+}
+p.addanimation.pop.showmores {
+    background: rgb(156, 39, 176);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: $pad-font-size;
+    font-weight: $lato-font-weight;
+    color: $light;
+    margin-top: 20px;
+}
+.qsn-set {
+    height: 40px;
+}
+figcaption.blog-name {
+    position: absolute;
+    padding: 8px;
+    color: $light;
+    font-weight: $lato-font-weight;
+    bottom: 0;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.popular-set {
+   height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.popular-set img {
+    position: absolute;      
+    top: 50%;      min-height:100%;      display:block;      
+    left: 50%;      
+    -webkit-transform: translate(-50%, -50%);  
+    -o-transform: translate(-50%, -50%);  
+    -moz-transform: translate(-50%, -50%);  
+    -ms-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);  
+    min-width:100%;
+}
+.popular-set figure{
+    height: 180px;
+}
+.layer {
+    height: 180px;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2) 55%, rgba(22, 22, 22, 1));
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.2) 55%, rgba(22, 22, 22, 1));
+    background: -ms-linear-gradient(rgba(0, 0, 0, 0.2) 55%, rgba(22, 22, 22, 1));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.2) 55%, rgba(22, 22, 22, 1));
+    position: relative;
+    @include transition(all,0.5s);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+ .user-imgs {
+  text-align: center;
+  position: absolute;
+  top: 115px;
+  right: 19px;
+  z-index: 99999;
+  text-transform: capitalize;
+}
+
+.user-imgs figcaption {
+    text-align: center;
+    margin: 0 auto;
+}
+p.text-image img {
+    width: 100%;
+}
+.user-imgs img {
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+}
+.art-date {
+    text-align: right;
+    padding-right: 20px;
+    color: $icon-color;
+}
+.artical-content {
+//    position: absolute;
+}
+.articals-det {
+    padding: 12px;
+}
+.articals-det h3 {
+    font-weight: $lato-font-weight;
+    color: $base-color;
+      text-align: center;
+      text-transform: capitalize;
+}
+.articals-det p {
+    font-size: $texts-font-size;
+    color: $icon-color;
+    font-weight: $lato-font-weight;
+}
+.scrooling {
+    background: rgba(0, 0, 0, 0.5);
+}
+.tabs-top > .tabs,
+.tabs.tabs-top {
+    border-bottom-width: 0px !important;
+}
+.articals-det a {
+    color: $positive;
+}
+
+.transparent {
+    background: transparent !important;
+}
+.modal-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+.centralize {
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.close-button {
+    position: absolute;
+    color:  $light;
+    font-size: 28px;
+    top: 10px;
+    left: 10px;
+      z-index: 99;
+}
+.bar-stables ion-header-bar {
+    background: black !important;
+}
+.profile-check.checkbox input:after, .checkbox-icon:after {
+  top: 36% !important;
+  left: 32% !important;
+  width: 8px !important;
+  height: 4px !important;
+}
+.no-data p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    font-size: 15px;
+    text-transform: capitalize;
+     color: #9C27B0;
+
+}
+.item-divider-positive {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-height: 30px;
+  /* background-color: #9C27B0; */
+  color: #9C27B0 !important;
+  font-weight: 400 !important;
+  border-width: 0px !important;
+  font-size: 16px;
+}
+.button.button-positive-facebook{
+  border-color: #2d4486;
+  background-color: #2d4486;
+  color: #fff;
+}
+
+
+.button.button-positive-twitter{
+  border-color: #45b0e3;
+  background-color: #45b0e3;
+  color: #fff;
+}
+.post-list{
+    margin-top: 20px;
+}
+.item.item-body.word-content {
+    padding: 0px 16px;
+}
+.item.item-avatar.post-head {
+    background: $light-grey;
+    color: #fff !important;
+}
+
+.item.item-avatar.post-head h2 {
+    color: $base-color;
+    text-transform: capitalize;
+     font-size: 14px;
+}
+
+.item.item-avatar.post-head p {
+    color: $link-color;
+    font-size: 13px !important;
+}
+.item.item-body.word-content p {
+    font-size: 13px;
+}
+.articals-det img {
+    width: 100% !important;
+    height: auto;
+}
+.articals-det div {
+    width: 100% !important;
+   
+}
+.item.item-body.word-content img {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.button-positive-facebook.button.activated {
+  border-color: #33477E !important;
+  background-color: #33477E !important;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+}
+.button-positive-twitter.button.activated {
+  border-color: #7EBCDA ;
+  background-color: #7EBCDA;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+}
+.articals-det iframe {
+    width: 100% !important;
+    height: auto !important;
+}

@@ -1,0 +1,22 @@
+<ion-view>
+    <ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+       
+        <div class="about-set">
+            <div class="map-set">
+                <h2 class="title-c">About us</h2>
+            </div>
+        </div>
+
+        <div class="about-us">
+            <h3 ng-repeat="head in abouthead">"{{head.content}}"</h3>
+            <p ng-repeat="cont in content">{{cont.detail}}</p>
+            <div class="know-content addanimation" ng-class="showDetails">
+                <p ng-repeat="text in moretext" class="moretext moreabout">{{text.more}}</p>
+            </div>
+            <div class="know-more know-btn" ng-click="showmore('moreabout');">
+                {{moredetails}}
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+        <div class="gallery2-set">
+            <div class="map-set">
+                <h2 class="title-c" ng-bind="name"></h2>
+            </div>
+        </div>
+        
+        <div class="gallery-img ">
+            <div class="row" ng-repeat="pro in newgallery">
+                <div class="col col-50" ng-click="openModal(innergallery.indexOf(fashion));" ng-repeat="fashion in pro">
+                    
+                    <figure class="image-set">
+                        <img ng-src="https://farm{{fashion.farm}}.staticflickr.com/{{fashion.server}}/{{fashion.id}}_{{fashion.secret}}_q.jpg" class="full-image">
+                        <figcaption>{{fashion.title}}</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

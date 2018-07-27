@@ -1,0 +1,49 @@
+<ion-view ng-controller="LoginJagruti">
+
+    <div class="bar bar-header dark-green">
+        <h1 class="title back-arrow"><a href="#/user-login"><i class="icon ion-ios-arrow-thin-left"></i></a></h1>
+    </div>
+
+    <ion-content overflow-scroll="true">
+        <div class="parallax">
+            <div class="clip-polygon">
+                <h2 class="title">Sign Up</h2>
+            </div>
+            <div class="sign-content">
+                <div class="list login-user">
+                    <label class=" item-input">
+                        <i class="icon ln-user"></i>
+                        <input type="text" placeholder="Name">
+                    </label>
+                    <label class=" item-input">
+                        <i class="icon ln-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+                    <label class=" item-input">
+                        <i class="icon ln-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </label>
+                    <label class=" item-input">
+                        <i class="icon ln-gift"></i>
+                        <input type="text" onfocus="(this.type='date')" placeholder="Birth Date">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="signin footer">
+            <div class="login-btn btn-set">
+                <a href="#/app/home">
+                    <button class="button button-full button-positive button-block">
+                        Join
+                    </button>
+                </a>
+            </div>
+            <div class="sign  text-center">
+                <span>Don’t have an account?<a href="#/user-login">Sign In</a></span>
+            </div>
+         
+        </div>
+
+    </ion-content>
+</ion-view>

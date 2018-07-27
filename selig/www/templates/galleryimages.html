@@ -1,0 +1,15 @@
+<ion-modal-view class="image-modal transparent">
+
+    <h1 class="close-button icon ion-android-close" ng-click="closeModal();"></h1>
+    
+    <div ng-show="firstslide" class="centralize">
+       <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+            <ion-slide ng-repeat="image in innergallery">
+                <ion-scroll zooming="true">
+                    <img ng-src="https://farm{{image.farm}}.staticflickr.com/{{image.server}}/{{image.id}}_{{image.secret}}_q.jpg" class="full-image" alt="">
+                </ion-scroll>
+            </ion-slide>
+        </ion-slide-box>
+        
+    </div>
+</ion-modal-view>

@@ -1,0 +1,57 @@
+<ion-view>
+    <ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+        <div class="setting-set">
+            <div class="map-set">
+                <h2 class="title-c">Profile</h2>
+                <i class="icon ion-ios-plus-empty image-up"></i>
+                <img class="user-pic" src="img/component/profile2.png">
+            </div>
+        </div>
+        
+        <div class="setting-form">
+           
+           <!--               Profile Setup     -->
+           
+           
+            <div class="list profile-user">
+                <label class="item item-input item-stacked-label first-label">
+                    <span class="input-label">First Name</span>
+                    <input type="text" placeholder="John">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" placeholder="Suhr">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="john@suhr.com">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Birthday</span>
+                    <input type="text" onfocus="(this.type='date')" placeholder="Birth Date">
+                </label>
+                <label class="item item-input item-stacked-label first-label">
+                    <span class="input-label">Change password</span>
+                    <input type="password" placeholder="********">
+                </label>
+
+            </div>
+            
+<!--             Profile End    -->
+           
+           
+            <div class="login footer">
+                <div class="login-btn btn-set">
+                    <a>
+                        <button class="button button-full button-positive button-block">
+                            Edit
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

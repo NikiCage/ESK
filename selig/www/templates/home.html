@@ -1,0 +1,33 @@
+<ion-view>
+    <div class="bar has-tabs-top bar-header bar-positive">
+        <h1 class="title">Home</h1>
+    </div>
+    <ion-content class="has-top">
+       
+        <div class="popular">
+           
+            <div class="post-list">
+                <div class="list card margin-tp" ng-repeat="txt in text" >
+                    
+                    <div class="item item-avatar post-head">
+                        <img src="{{txt.author.avatar_URL}}">
+                        <h2>{{txt.slug}}</h2>
+                        <p>{{txt.date | date:"MMMM dd, yyyy"}}</p>
+                    </div>
+
+                    <div class="item item-body word-content">
+                        <p ng-bind-html="txt.content | cut:true:300:'...'| rawHtml "></p>
+                        <div class="post-actions row">
+                            <div class="actions col col-center col-66"></div>
+                            <div class="read-more col col-center col-33">
+                                <a ng-click="postDetail(txt.meta.links.self)" class="button button-small button-block button-positive">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-view>

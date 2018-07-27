@@ -1,0 +1,84 @@
+<ion-view>
+    <ion-content style="top:0px" overflow-scroll="true" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+        <div class="user-imgs">
+            <figure>
+                <img src="{{post.author.avatar_URL}}" ng-if="post.trail.length!=0">
+                <figcaption>{{post.author.name}}</figcaption>
+            </figure>
+        </div>
+        <div class="artical-set">
+            <div class="map-set">
+                <h2 class="title-c">Article</h2>
+            </div>
+
+        </div>
+
+        <div class="articalcontent">
+            <div class="art-date">
+<!--                <p>June 15,2015</p>-->
+                <p>{{post.date | date:"MMM dd, yyyy"}}</p>
+            </div>
+            <div class="articals-det">
+                <h3>"{{post.slug}}...."</h3>
+                <p ng-bind-html="post.content | rawHtml"></p>
+
+<!--
+                <div class="know-content addanimation" ng-class="showDetails">
+                    <p class="moretext moreart" ng-bind-html="txts | rawHtml"></p>
+                </div>
+                <div class="know-more know-btn" ng-click="showmore('moreart');">
+                    {{moredetails}}
+                </div>
+-->
+
+            </div>
+            <div class="articals-det" ng-if="post.type=='photo'">
+                <h3>"{{post.blog_name}}...."</h3>
+                <p ng-bind-html="post.trail[0].content | rawHtml"></p>
+
+                <div class="art-pic" collection-repeat="img in post.photos">
+                    <img src="{{img.original_size.url}}" class="full-image">
+                </div>
+                <div class="know-content addanimation" ng-class="showDetails" collection-repeat="img in images">
+                    <p class="moretext moreart"><img src="{{img.original_size.url}}" class="full-image"></p>
+                </div>
+                <div class="know-more know-btn" ng-click="showmore('moreart');" ng-if="images.length > 1">
+                    {{moredetails}}
+                </div>
+
+            </div>
+            <div class="articals-det" ng-if="post.type == 'video'">
+                <h3>"{{post.blog_name}}...."</h3>
+                <p ng-bind-html="post.trail[0].content | rawHtml"></p>
+
+                <div class="art-pic" collection-repeat="img in post.photos">
+                    <img src="{{img.original_size.url}}" class="full-image">
+                </div>
+                
+                <iframe width="250" height="187" src={{post.permalink_url}} frameborder="0" allowfullscreen></iframe>
+
+            </div>
+            <div class="articals-det" ng-if="post.type == 'link'">
+                <h3>"{{post.title}}...."</h3>
+                <p ng-bind-html="post.trail[0].content | rawHtml"></p>
+                <p ng-bind-html="post.excerpt | rawHtml"></p>
+                <a href="{{post.url}}"><p ng-bind-html="post.url | rawHtml"></p></a>
+
+                <div class="art-pic" collection-repeat="img in post.photos">
+                    <img src="{{img.original_size.url}}" class="full-image">
+                </div>
+<!--
+                <div class="know-content addanimation" ng-class="showDetails">
+                    <p ng-repeat="img in post.photos" class="moretext moreart">{{text.more}}</p>
+                </div>
+                <div class="know-more know-btn" ng-click="showmore('moreart');">
+                    {{moredetails}}
+                </div>
+-->
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
