@@ -5,12 +5,12 @@
         .config(router);
 
     function router($stateProvider) {
-        $stateProvider.state('app.main.start_test', {
-            url: '/start_test',
+        $stateProvider.state('app.main.start_nails', {
+            url: '/start_nails',
             views: {
                 'content@app.main': {
                     controller: 'startCntr as vm',
-                    templateUrl: './app/templates/start/test.html'
+                    templateUrl: './app/templates/start/nails.html'
                 }
             },
             roles: ['Respondents', 'Users'],
@@ -20,7 +20,7 @@
             views: {
                 'content@app.main': {
                     controller: 'startCntr as vm',
-                    templateUrl: './app/templates/start/catalog.html'
+                    templateUrl: './app/templates/start/hair.html'
                 }
             },
             roles: ['Respondents', 'Users'],

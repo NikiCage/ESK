@@ -27,7 +27,7 @@ $small-size: 14px !default; //было 13px
 $middle-size: 15px !default; //было 14px
 $large-size: 17px !default; //было 14px
 $light-gray: #777777 !default;
-$pink-1:  #f3627c !default;
+$pink-1:  #FF063B !default;
 $mobile: 767px !default;
 
 @mixin respond-to($media) {
@@ -109,6 +109,10 @@ div {
 
   .platform-universal &{
     height: 44px;
+  }
+
+  &.bar-assertive{
+    background-color: #FF063B !important;
   }
 
   .title {
@@ -395,7 +399,7 @@ div {
       width: 18px;
       height: 18px;
       border: 2px solid #f7f7f7;
-      background-color: #F3637C;
+      background-color: #FF063B;
       color: #fff;
       position: absolute;
       top: 0px;
@@ -408,9 +412,9 @@ div {
 
     }
     &.active{
-      color: #F3637C !important;
+      color: #FF063B !important;
       svg path{
-        fill: #F3637C;
+        fill: #FF063B;
       }
     }
   }
@@ -556,7 +560,7 @@ div {
       width: 1000px;
       height: 300px;
 
-      background: rgba(#f3627c, .8);
+      background: rgba(#FF063B, .8);
     }
   }
 
@@ -597,7 +601,7 @@ div {
     justify-content: center;
     text-transform: uppercase;
     color: #fff;
-    background-color: #F3627C;
+    background-color: #FF063B;
     font-size: 17px;
   }
 
@@ -682,13 +686,13 @@ div {
 
 
     &.active {
-      color: #f3627c;
+      color: #FF063B;
 
       border-color: transparent;
       background-color: transparent;
 
       & .item__icon {
-        fill: #f3627c;
+        fill: #FF063B;
       }
     }
 
@@ -716,7 +720,7 @@ div {
   border-radius: 3px;
 }
 
-$welcome-font-color   : #f3627c !default;
+$welcome-font-color   : #FF063B !default;
 $catalog-font-color   : #2FB4EF !default;
 $aromat-font-color    : #7FAE48 !default;
 $classify-font-color  : #9770cb !default;
@@ -1238,7 +1242,7 @@ $surveys-font-color  : #E28907 !default;
     }
     &:focus ~ .b-input-wraper__label {
       top: -12px;
-      color: #ec637d;
+      color: #FF376C;
       font-size: $small-size;
       @include respond-to(small-text-tablet);
     }
@@ -1246,7 +1250,7 @@ $surveys-font-color  : #E28907 !default;
     &:focus ~ .b-input-wraper__line:before,
     &:focus ~ .b-input-wraper__line:after {
       width: 100%;
-      background: #ec637d;
+      background: #FF376C;
     }
   }
 
@@ -1276,7 +1280,7 @@ $surveys-font-color  : #E28907 !default;
       bottom: 0;
       width: 0;
       height: 2px;
-      background: #ec637d;
+      background: #FF376C;
       transition: width .4s cubic-bezier(.4,0,.2,1);
     }
 
@@ -1287,7 +1291,7 @@ $surveys-font-color  : #E28907 !default;
       bottom: 0;
       width: 0;
       height: 2px;
-      background: #ec637d;
+      background: #FF376C;
       transition: width .4s cubic-bezier(.4,0,.2,1);
     }
 
@@ -1296,7 +1300,7 @@ $surveys-font-color  : #E28907 !default;
       &:before,
       &:after {
         width: 100%;
-        background: #ec637d;
+        background: #FF376C;
       }
 
     }
@@ -1527,7 +1531,7 @@ $surveys-font-color  : #E28907 !default;
 
   &__title {
 
-    color: #f3627c;
+    color: #FF063B;
 
     font-family: $rotobo-font;
     font-size: 15px;
@@ -1648,7 +1652,7 @@ $surveys-font-color  : #E28907 !default;
     text-decoration: none;
 
     &.active {
-      color : #f3627c;
+      color : #FF063B;
     }
   }
 }
@@ -1670,9 +1674,9 @@ $surveys-font-color  : #E28907 !default;
     display: none;
 
     &.ng-valid-parse.ng-not-empty + .b-checkbox__item:before {
-      background: #f3627c;
+      background: #FF063B;
 
-      border-color:  #f3627c;
+      border-color:  #FF063B;
     }
 
     &.ng-valid-parse.ng-not-empty + .b-checkbox__item:after {
@@ -1802,7 +1806,7 @@ $surveys-font-color  : #E28907 !default;
     text-transform: uppercase;
 
     &_accent {
-      color: #f3627c;
+      color: #FF063B;
     }
   }
 
@@ -2070,7 +2074,7 @@ $surveys-font-color  : #E28907 !default;
     }
 
     &_accent {
-      color: #f3627c;
+      color: #FF063B;
     }
   }
 
@@ -2093,7 +2097,7 @@ $surveys-font-color  : #E28907 !default;
 
     line-height: 19px;
 
-    background: #f3627c;
+    background: #FF063B;
     border-radius: 50%;
   }
 }
@@ -2356,7 +2360,7 @@ $surveys-font-color  : #E28907 !default;
     width: 20px;
     height: 44px;
 
-    fill : #ec637d;
+    fill : #FF376C;
   }
 
 
@@ -2521,7 +2525,7 @@ $surveys-font-color  : #E28907 !default;
     transition: fill 20ms ease-in-out;
 
     &_after {
-      fill   :  #f3627c;
+      fill   :  #FF063B;
 
       opacity: 0;
     }
@@ -2613,7 +2617,7 @@ $surveys-font-color  : #E28907 !default;
   &__subtitle {
     padding: 20px 17px;
 
-    color: #f3627c;
+    color: #FF063B;
 
     font-size: 15px;
     @include respond-to(title-tablet);
@@ -2648,7 +2652,7 @@ $surveys-font-color  : #E28907 !default;
     text-transform: uppercase;
 
     &_accent {
-      color: #f3627c;
+      color: #FF063B;
     }
   }
 
@@ -2690,7 +2694,7 @@ $surveys-font-color  : #E28907 !default;
 
     height: 2px;
 
-    background: #f3627c;
+    background: #FF063B;
 
     z-index: 1;
   }
@@ -2747,7 +2751,7 @@ $surveys-font-color  : #E28907 !default;
 
     text-align: center;
 
-    background: #f3627c;
+    background: #FF063B;
     border: 5px solid #fff;
 
     border-radius: 50%;
@@ -2914,7 +2918,7 @@ $surveys-font-color  : #E28907 !default;
     text-transform: uppercase;
 
     &_accent {
-      color: #f3627c;
+      color: #FF063B;
     }
   }
 
@@ -2960,8 +2964,8 @@ $surveys-font-color  : #E28907 !default;
       .icon-phone{
         position: absolute;
         right: 0;
-        border: 1px solid #f3627c;
-        background: #f3627c;
+        border: 1px solid #FF063B;
+        background: #FF063B;
         border-radius: 50%;
         padding: 15px;
         width: 50px;
@@ -3007,7 +3011,7 @@ $surveys-font-color  : #E28907 !default;
   }
 
   &__card-message {
-    color: #ef3354;
+    color: #FF063B;
 
     font-size: 22px;
   }
@@ -3021,7 +3025,7 @@ $surveys-font-color  : #E28907 !default;
     width: 100%;
     height: 100%;
 
-    fill: #ef3354;
+    fill: #FF063B;
   }
 
   &__card-date-wrap {
@@ -3049,7 +3053,7 @@ $surveys-font-color  : #E28907 !default;
     text-transform: none;
 
     &_accent {
-      color: #ef3354;
+      color: #FF063B;
     }
   }
 
@@ -3067,7 +3071,7 @@ $surveys-font-color  : #E28907 !default;
     line-height: 15px;
 
     &_accent {
-      color: #ef3354;
+      color: #FF063B;
     }
   }
 
@@ -3278,7 +3282,7 @@ $surveys-font-color  : #E28907 !default;
   }
 
   &__label {
-    color: #f3627c;
+    color: #FF063B;
 
     font-family: $rotobo-font;
     font-size: 15px;
@@ -3310,7 +3314,7 @@ $surveys-font-color  : #E28907 !default;
   &__title {
     padding: 0 0 0px;
 
-    color: #f3627c;
+    color: #FF063B;
 
     font-family: $rotobo-font;
     font-size: 15px;

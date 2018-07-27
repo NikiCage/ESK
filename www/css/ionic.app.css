@@ -3097,7 +3097,7 @@ a:hover {
  */
 a {
   -webkit-user-drag: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent; }
   a[href]:hover {
     cursor: pointer; }
@@ -3334,7 +3334,7 @@ body,
   -webkit-text-size-adjust: none;
   -moz-text-size-adjust: none;
   text-size-adjust: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3743,7 +3743,7 @@ a.subdued {
   z-index: 11;
   width: 100%;
   height: 100%;
-  background-color: transparent; }
+  background-color: rgba(0, 0, 0, 0); }
   .action-sheet-backdrop.active {
     background-color: rgba(0, 0, 0, 0.4); }
 
@@ -5413,7 +5413,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   z-index: 10;
   width: 100%;
   height: 100%;
-  background-color: transparent; }
+  background-color: rgba(0, 0, 0, 0); }
   .popover-backdrop.active {
     background-color: rgba(0, 0, 0, 0.1); }
 
@@ -5537,7 +5537,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   left: 0;
   bottom: 0;
   right: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -7114,51 +7114,51 @@ button.swiper-pagination-bullet {
   z-index: 10; }
 
 .swiper-container-3d .swiper-slide-shadow-left {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
   /* Safari 4+, Chrome */
-  background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Chrome 10+, Safari 5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 3.6-15 */
-  background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Opera 11.10-12.00 */
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 16+, IE10, Opera 12.50+ */ }
 
 .swiper-container-3d .swiper-slide-shadow-right {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
   /* Safari 4+, Chrome */
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Chrome 10+, Safari 5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 3.6-15 */
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Opera 11.10-12.00 */
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 16+, IE10, Opera 12.50+ */ }
 
 .swiper-container-3d .swiper-slide-shadow-top {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
   /* Safari 4+, Chrome */
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Chrome 10+, Safari 5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 3.6-15 */
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Opera 11.10-12.00 */
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 16+, IE10, Opera 12.50+ */ }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
   /* Safari 4+, Chrome */
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Chrome 10+, Safari 5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 3.6-15 */
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Opera 11.10-12.00 */
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   /* Firefox 16+, IE10, Opera 12.50+ */ }
 
 /* Coverflow */
@@ -8520,8 +8520,8 @@ input:checked + .checkbox-icon:after {
     width: 0;
     height: 0;
     border-top: 5px solid;
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-left: 5px solid rgba(0, 0, 0, 0);
     color: #999;
     content: "";
     pointer-events: none; }
@@ -9406,7 +9406,7 @@ a.button {
   -ms-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-user-drag: none;
   -ms-touch-action: none;
@@ -9832,7 +9832,7 @@ body,
   background: #efeeee; }
 
 a {
-  color: #f3627c; }
+  color: #FF063B; }
 
 .text-center {
   text-align: center; }
@@ -9860,7 +9860,7 @@ div {
   .popup .popup-buttons button {
     width: 100%; }
     .popup .popup-buttons button.button-positive {
-      background-color: #f3627c; }
+      background-color: #FF063B; }
     .popup .popup-buttons button:first-child {
       margin-bottom: 10px; }
 
@@ -9868,6 +9868,8 @@ div {
   height: 58px; }
   .platform-universal .bar {
     height: 44px; }
+  .bar.bar-assertive {
+    background-color: #FF063B !important; }
   .bar .title {
     padding-left: 2px;
     text-transform: uppercase;
@@ -10033,7 +10035,7 @@ div {
       width: 18px;
       height: 18px;
       border: 2px solid #f7f7f7;
-      background-color: #F3637C;
+      background-color: #FF063B;
       color: #fff;
       position: absolute;
       top: 0px;
@@ -10043,9 +10045,9 @@ div {
       justify-content: center;
       align-items: center; }
     .platform-universal .ios-bar-bottom a.active {
-      color: #F3637C !important; }
+      color: #FF063B !important; }
       .platform-universal .ios-bar-bottom a.active svg path {
-        fill: #F3637C; }
+        fill: #FF063B; }
 
 .platform-universal .manual-ios-statusbar-padding {
   padding-top: 0 !important; }
@@ -10145,7 +10147,7 @@ div {
       bottom: 0;
       width: 1000px;
       height: 300px;
-      background: rgba(243, 98, 124, 0.8); }
+      background: rgba(255, 6, 59, 0.8); }
   .b-sidebar__title {
     position: relative;
     padding: 123px 15px 12px;
@@ -10172,7 +10174,7 @@ div {
     justify-content: center;
     text-transform: uppercase;
     color: #fff;
-    background-color: #F3627C;
+    background-color: #FF063B;
     font-size: 17px; }
   .platform-universal .b-sidebar .ios-arrow-back {
     position: absolute;
@@ -10223,11 +10225,11 @@ div {
       .platform-universal .b-sidebar__item:first-of-type {
         border-top-width: 2px; }
     .b-sidebar__item.active {
-      color: #f3627c;
+      color: #FF063B;
       border-color: transparent;
       background-color: transparent; }
       .b-sidebar__item.active .item__icon {
-        fill: #f3627c; }
+        fill: #FF063B; }
     .b-sidebar__item .item__icon {
       width: 18px;
       height: 18px;
@@ -10253,7 +10255,7 @@ div {
     .b-card-tab {
       min-height: 395px; } }
   .b-card-tab_welcome {
-    color: #f3627c; }
+    color: #FF063B; }
     @media screen and (max-width: 768px) {
       .b-card-tab_welcome {
         min-height: 200px; } }
@@ -10261,7 +10263,7 @@ div {
       .b-card-tab_welcome {
         min-height: 200px; } }
     .b-card-tab_welcome a {
-      color: #f3627c; }
+      color: #FF063B; }
   .b-card-tab_catalog-bg {
     background-image: url("../img/start-page/catalog.jpg");
     background-size: cover;
@@ -10563,7 +10565,7 @@ div {
       padding-left: 12px; }
     .b-input-wraper .b-input-wraper__input:focus ~ .b-input-wraper__label {
       top: -12px;
-      color: #ec637d;
+      color: #FF376C;
       font-size: 14px; }
       @media only screen and (min-width: 767px) {
         .b-input-wraper .b-input-wraper__input:focus ~ .b-input-wraper__label {
@@ -10571,7 +10573,7 @@ div {
     .b-input-wraper .b-input-wraper__input:focus ~ .b-input-wraper__line:before,
     .b-input-wraper .b-input-wraper__input:focus ~ .b-input-wraper__line:after {
       width: 100%;
-      background: #ec637d; }
+      background: #FF376C; }
   .b-input-wraper .b-input-wraper__label {
     text-transform: initial;
     color: #777777;
@@ -10595,7 +10597,7 @@ div {
       bottom: 0;
       width: 0;
       height: 2px;
-      background: #ec637d;
+      background: #FF376C;
       transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
     .b-input-wraper .b-input-wraper__line:after {
       content: '';
@@ -10604,11 +10606,11 @@ div {
       bottom: 0;
       width: 0;
       height: 2px;
-      background: #ec637d;
+      background: #FF376C;
       transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
     .b-input-wraper .b-input-wraper__line_active:before, .b-input-wraper .b-input-wraper__line_active:after {
       width: 100%;
-      background: #ec637d; }
+      background: #FF376C; }
   .b-input-wraper__tooltip {
     position: absolute;
     font-size: 12px;
@@ -10762,7 +10764,7 @@ div {
   text-overflow: ellipsis; }
 
 .b-category__title {
-  color: #f3627c;
+  color: #FF063B;
   font-family: "Roboto";
   font-size: 15px;
   line-height: 1.5;
@@ -10844,7 +10846,7 @@ div {
       .b-toolbar-nav__item {
         font-size: 17px; } }
     .b-toolbar-nav__item.active {
-      color: #f3627c; }
+      color: #FF063B; }
 
 .b-checkbox__label {
   display: block;
@@ -10855,8 +10857,8 @@ div {
 .b-checkbox__input[type=checkbox], .b-checkbox__input[type=radio] {
   display: none; }
   .b-checkbox__input[type=checkbox].ng-valid-parse.ng-not-empty + .b-checkbox__item:before, .b-checkbox__input[type=radio].ng-valid-parse.ng-not-empty + .b-checkbox__item:before {
-    background: #f3627c;
-    border-color: #f3627c; }
+    background: #FF063B;
+    border-color: #FF063B; }
   .b-checkbox__input[type=checkbox].ng-valid-parse.ng-not-empty + .b-checkbox__item:after, .b-checkbox__input[type=radio].ng-valid-parse.ng-not-empty + .b-checkbox__item:after {
     opacity: 1; }
 
@@ -10939,7 +10941,7 @@ div {
       .b-filter__toolbar-btn {
         font-size: 17px; } }
     .b-filter__toolbar-btn_accent {
-      color: #f3627c; }
+      color: #FF063B; }
   .b-filter__row {
     border-bottom: 1px solid #efeeee; }
   .b-filter__wrap {
@@ -11096,7 +11098,7 @@ div {
     .b-message__date_single {
       padding-top: 28px; }
     .b-message__date_accent {
-      color: #f3627c; }
+      color: #FF063B; }
   .b-message__unread {
     display: inline-block;
     min-width: 20px;
@@ -11107,7 +11109,7 @@ div {
     color: #fff;
     text-align: center;
     line-height: 19px;
-    background: #f3627c;
+    background: #FF063B;
     border-radius: 50%; }
     @media only screen and (min-width: 767px) {
       .b-message__unread {
@@ -11282,7 +11284,7 @@ div {
 .b-chat__send-btn-pic {
   width: 20px;
   height: 44px;
-  fill: #ec637d; }
+  fill: #FF376C; }
 
 .platform-universal .footer-bar-chat {
   height: 45px; }
@@ -11386,7 +11388,7 @@ div {
   transform: translateY(-50%);
   transition: fill 20ms ease-in-out; }
   .b-test__checkbox-swg_after {
-    fill: #f3627c;
+    fill: #FF063B;
     opacity: 0; }
   .b-test__checkbox-swg_woman {
     transform: translateY(-34%); }
@@ -11444,7 +11446,7 @@ div {
 
 .b-test__subtitle {
   padding: 20px 17px;
-  color: #f3627c;
+  color: #FF063B;
   font-size: 15px;
   font-family: "Roboto";
   text-transform: uppercase;
@@ -11469,7 +11471,7 @@ div {
   text-align: center;
   text-transform: uppercase; }
   .b-test__pagination-btn_accent {
-    color: #f3627c; }
+    color: #FF063B; }
 
 .b-test__pagination-btn-icon {
   padding: 0 5px; }
@@ -11495,7 +11497,7 @@ div {
   top: 0;
   left: 0;
   height: 2px;
-  background: #f3627c;
+  background: #FF063B;
   z-index: 1; }
 
 .b-steper {
@@ -11524,7 +11526,7 @@ div {
     font-size: 15px;
     line-height: 25px;
     text-align: center;
-    background: #f3627c;
+    background: #FF063B;
     border: 5px solid #fff;
     border-radius: 50%; }
     @media only screen and (min-width: 768px) {
@@ -11639,7 +11641,7 @@ div {
     .b-result__card-title {
       font-size: 17px; } }
   .b-result__card-title_accent {
-    color: #f3627c; }
+    color: #FF063B; }
 
 .b-result__card-picture {
   min-width: 80px;
@@ -11675,8 +11677,8 @@ div {
     .b-result__card-subtitle a .icon-phone {
       position: absolute;
       right: 0;
-      border: 1px solid #f3627c;
-      background: #f3627c;
+      border: 1px solid #FF063B;
+      background: #FF063B;
       border-radius: 50%;
       padding: 15px;
       width: 50px;
@@ -11712,7 +11714,7 @@ div {
   padding: 28px 0 20px 15px; }
 
 .b-result__card-message {
-  color: #ef3354;
+  color: #FF063B;
   font-size: 22px; }
 
 .b-result__card-call {
@@ -11722,7 +11724,7 @@ div {
 .b-result__call-icon {
   width: 100%;
   height: 100%;
-  fill: #ef3354; }
+  fill: #FF063B; }
 
 .b-result__card-date-wrap {
   display: flex;
@@ -11742,7 +11744,7 @@ div {
     .b-result__card-date {
       font-size: 14px; } }
   .b-result__card-date_accent {
-    color: #ef3354; }
+    color: #FF063B; }
 
 .b-result__card-icon {
   display: flex;
@@ -11754,7 +11756,7 @@ div {
     .b-result__card-icon {
       font-size: 14px; } }
   .b-result__card-icon_accent {
-    color: #ef3354; }
+    color: #FF063B; }
 
 .b-result__card-hidden-info {
   width: 100%;
@@ -11884,7 +11886,7 @@ div {
     .b-product__column.w-75 {
       width: 75%; }
   .b-product__label {
-    color: #f3627c;
+    color: #FF063B;
     font-family: "Roboto";
     font-size: 15px;
     text-transform: uppercase; }
@@ -11905,7 +11907,7 @@ div {
         font-size: 22px; } }
   .b-product__title {
     padding: 0 0 0px;
-    color: #f3627c;
+    color: #FF063B;
     font-family: "Roboto";
     font-size: 15px; }
     @media only screen and (min-width: 767px) {
