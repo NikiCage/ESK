@@ -10,7 +10,7 @@
 				.state('app.login', {
 					url: '/login',
 					views : {
-						'content@app': {
+						'content': {
 							controller: 'authCntr as vm',
 							templateUrl: "./app/templates/login/auth/auth.html"
 						}
