@@ -9,23 +9,27 @@
 
         $urlRouterProvider.when('/', '/login');
         $urlRouterProvider.otherwise('/start');
+        const Ping = ['$firebaseAuth','$firebaseEvents',function($firebaseAuth, $firebaseEvents) {
+            console.log('test');
+            return $firebaseAuth.authorize();
+        }];
         $stateProvider
             .state('app', {
                 abstract: true,
                 controller: 'appCntr as vm',
                 templateUrl: "./app/app.html",
                 resolve : {
-                    Ping : function($firebaseAuth, $firebaseEvents) {
-                        console.log('test');
-                        return $firebaseAuth.authorize();
-                    }
+                    Ping : Ping
                 }
             })
-            .state('app.main', {
+            .state('main', {
                 abstract: true,
                 templateUrl: "./app/templates/main.html",
                 controller: 'mainCntr as vm',
-                authenticate : false
+                authenticate : false,
+                resolve : {
+                    Ping : Ping
+                }
             });
 
 

@@ -6,10 +6,12 @@
 
 		function startCntr( $app, $localStorage, $api, $user, $interval, $scope, $firebaseEvents) {
 			var vm = this;
+            console.log('startCntr');
 
 			// Data
             vm.welcome = $user.isInRole('WithoutConsultant');
             vm.unread = 0;
+            vm.current = 'hair';
 
             $firebaseEvents.load().then(events => vm.events = events);
             var iterator = false;

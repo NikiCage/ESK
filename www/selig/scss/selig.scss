@@ -16,7 +16,7 @@
 
 //****** End ******
 
- $positive:                       #9C27B0 !default;
+ $positive:                       #ff103d !default;
  $calm:                           #03A9F4 !default;
  $stable:                         transparent !default;
  $base-color:                     #212121 !default;
@@ -26,7 +26,8 @@
  $font-family-sans-serif:         "Lato","Helvetica Neue","Roboto","Segoe UI",sans-serif !default;
  $font-family-light-sans-serif:   "Lato","HelveticaNeue-Light","Roboto-Light","Segoe UI-Light",sans-serif-light !default;
  $light:                          #fff !default;
- $input-color-placeholder:        #212121 !default;
+ $dark:                            #444 !default;
+ $input-color-placeholder:        lighten($dark, 40%) !default;
  $lato-font-weight:               300 !default;
  //$button-stable-text:             #fff !default;
  $headings-font-weight:           500 !default;
@@ -145,7 +146,6 @@ img.img-responsive {
 }
 .btn-set button {
     font-weight: $lato-font-weight;
-    text-transform: capitalize;
     min-height: 52px;
 }
 .profile-set a {
@@ -432,11 +432,9 @@ li.gender-li span {
 figure.image-set figcaption {
     text-align: center;
     color: $icon-color;
-    text-transform: capitalize;
 }
 .about-us h3 {
     font-weight: $lato-font-weight;
-    text-transform: capitalize;
     color: $base-color;
     margin-bottom: 35px;
 }
@@ -524,7 +522,6 @@ figcaption.blog-name {
     font-weight: $lato-font-weight;
     bottom: 0;
     font-size: 15px;
-    text-transform: capitalize;
 }
 .popular-set {
    height: 100%;
@@ -598,7 +595,6 @@ p.text-image img {
     font-weight: $lato-font-weight;
     color: $base-color;
       text-align: center;
-      text-transform: capitalize;
 }
 .articals-det p {
     font-size: $texts-font-size;
@@ -664,16 +660,15 @@ p.text-image img {
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     font-size: 15px;
-    text-transform: capitalize;
-     color: #9C27B0;
+     color: $positive;
 
 }
 .item-divider-positive {
   padding-top: 8px !important;
   padding-bottom: 8px !important;
   min-height: 30px;
-  /* background-color: #9C27B0; */
-  color: #9C27B0 !important;
+  /* background-color: $positive; */
+  color: $positive !important;
   font-weight: 400 !important;
   border-width: 0px !important;
   font-size: 16px;
@@ -703,7 +698,6 @@ p.text-image img {
 
 .item.item-avatar.post-head h2 {
     color: $base-color;
-    text-transform: capitalize;
      font-size: 14px;
 }
 

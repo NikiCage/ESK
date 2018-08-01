@@ -13,6 +13,7 @@
 			}
 			// Method
 			vm.phoneFocus = phoneFocus;
+			vm.checkPhone = checkPhone;
 			vm.checkCode = checkCode;
 
 			vm.request = request;
@@ -20,8 +21,7 @@
 			vm.anonimAuth = anonimAuth;
 
             vm.backToPrevState = $app.toMainState;
-
-            $firebaseCities.load().then(cities => vm.cities = cities);
+            $firebaseCities.load().then(cities => {vm.cities = cities; $scope.$$phase || $scope.$apply()});
             $scope.$on("reCAPTCHA.init", (e, _captcha) => captcha = _captcha);
 
 			// Functions
@@ -31,7 +31,10 @@
                     e.target.setSelectionRange(1,1);
                 },1);
             }
-
+            function checkPhone() {
+                if(vm.phone && (vm.phone+'').length == 11) return true;
+                return false;
+            }
             function checkCode() {
             	if(vm.code && (vm.code+'').length == 6) return true;
                 return false;

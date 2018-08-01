@@ -7,6 +7,8 @@
         .filter('altDate', altDate)
         .filter('searchByName', searchByName)
         .filter('htmlToPlaintext', htmlToPlaintext)
+        .filter('cut', cut)
+        .filter('rawHtml', ['$sce', rawHtml])
         .factory('$app', appService);
 
     /** @ngInject */
@@ -378,6 +380,32 @@
     function htmlToPlaintext() {
         return function(text) {
             return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
+        };
+    }
+
+    function cut() {
+        return function(value, wordwise, max, tail) {
+            if (!value) return '';
+
+            max = parseInt(max, 10);
+            if (!max) return value;
+            if (value.length <= max) return value;
+
+            value = value.substr(0, max);
+            if (wordwise) {
+                var lastspace = value.lastIndexOf(' ');
+                if (lastspace != -1) {
+                    value = value.substr(0, lastspace);
+                }
+            }
+
+            return value + (tail || ' …');
+        };
+    }
+
+    function rawHtml($sce) {
+        return function(val) {
+            return $sce.trustAsHtml(val);
         };
     }
 

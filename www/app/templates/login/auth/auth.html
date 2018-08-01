@@ -7,28 +7,38 @@
 
 		<div class="login-content">
 			<div class="list login-user">
-				<label class=" item-input">
+				<label class=" item-input item-select">
 					<i class="icon ln-map-marker"></i>
-					<select id="city" class="b-input-wraper__input fz-17" ng-model="vm.city" placeholder="Выберете свой город">
-						<option ng-repeat="city in vm.cities" ng-value="$index">{{city}}</option>
+                    <div class="input-label">
+                        Выберете город
+                    </div>
+					<select id="city" ng-model="vm.city">
+						<option ng-repeat="city in vm.cities" ng-init="!$index && (vm.city = $index)" value="{{$index}}">{{city}}</option>
 					</select>
 				</label>
 				<label class=" item-input">
 					<i class="icon ln-phone"></i>
-					<input id="phone" type="number" placeholder="Введите свой номер телефона" ng-model="vm.phone" ng-disabled="vm.codeShow">
+                    <div class="input-label">
+                        Номер телефона
+                    </div>
+					<input id="phone" class="text-right" type="number" placeholder="79091234567" ng-model="vm.phone" ng-disabled="vm.codeShow" ng-pattern="\d{11}">
 				</label>
 				<label class=" item-input" ng-if="vm.codeShow">
 					<i class="icon ln-lock"></i>
-					<input id="code" type="number" placeholder="Введите код" ng-model="vm.code">
+                    <div class="input-label">
+                        Введите код
+                    </div>
+					<input id="code" class="text-right" type="number" placeholder="******" ng-model="vm.code">
 				</label>
 			</div>
-			<div class="m-8" ng-if="!vm.codeShow">
-				<div fx-recaptcha></div>
-			</div>
+            <div ng-if="!vm.codeShow">
+                <div  style="width: 304px; margin: 0 auto" fx-recaptcha></div>
+            </div>
+
 			<div class="login footer">
 				<div class="login-btn btn-set">
-					<a href="#" ng-hide="vm.codeShow" ng-click="$event.preventDefault(); vm.phone && vm.accepted && vm.request()">
-						<button class="button button-full button-block" ng-class="{'button-stable' : !vm.phone || !vm.accepted, 'button-positive' : vm.phone && vm.accepted}">
+					<a href="#" ng-hide="vm.codeShow" ng-click="$event.preventDefault(); vm.checkPhone() && vm.request()">
+						<button class="button button-full button-block" ng-class="{'button-stable' : !vm.checkPhone(), 'button-positive' : vm.checkPhone()}">
 							Получить код подтверждения
 						</button>
 					</a>
@@ -56,9 +66,9 @@
 					</button>
 
 				</div>
-				<div class="sign text-center">
+				<!--<div class="sign text-center">
 					<span>Don’t have an account?<a href="#/user-signup">Sign Up</a></span>
-				</div>
+				</div>-->
 
 			</div>
 		</div>
