@@ -8,7 +8,7 @@
             'siteUrl'  : domain,
             'apiUrl'   : domain,
             'privateUrl'   : test ? 'http://lk-mobile.armelle-dev.ru' : 'https://lk-mobile.armelle.world',
-            'state'   : 'app.main.start',
+            'state'   : 'main.start',
             'thumbUrl' : domain + '%type%/%mode%/%id%_%width%_%height%'
         };
 

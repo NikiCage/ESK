@@ -67,6 +67,7 @@
 
         const signOut = () => {
             firebase.auth().signOut();
+            user = false;
             $app.toLoginState();
         };
 

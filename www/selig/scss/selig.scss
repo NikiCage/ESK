@@ -16,7 +16,7 @@
 
 //****** End ******
 
- $positive:                       #ff103d !default;
+ $positive:                       #F65D7B !default;
  $calm:                           #03A9F4 !default;
  $stable:                         transparent !default;
  $base-color:                     #212121 !default;
@@ -29,12 +29,15 @@
  $dark:                            #444 !default;
  $input-color-placeholder:        lighten($dark, 40%) !default;
  $lato-font-weight:               300 !default;
- //$button-stable-text:             #fff !default;
+ $button-stable-text:             #fff !default;
+$button-stable-bg:                 #BBBDBC !default;
+ $button-stable-active-bg:       #BBBDBC !default;
+
  $headings-font-weight:           500 !default;
  $texts-font-size:                14px !default;
  $input-padding:                  4px 0px 0px 3px !default;
  $pad-font-size:                  13px !default;
- //$button-stable-border:           transparent !default;
+ $button-stable-border:           transparent !default;
  $background-menu:                url('../img/side-menu.png');
  $sign-bg-image:                  url('../img/sign-back.png') no-repeat center center;
  $contact-bg-image:               url('../img/component/contact.png') no-repeat center center;
@@ -314,9 +317,9 @@ i.icon.side-menu-i {
 .side-image img {
     text-align: center;
     margin: 0 auto;
-    border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    //border-radius: 100%;
+    width: 120px;
+    height: 120px;
 }
 .side-image figcaption {
     color: $light;
@@ -326,7 +329,7 @@ i.icon.side-menu-i {
 .profile-set {
     float: right;
     color: $light;
-    margin: 12px 11px 0px 3px;
+    margin: -12px 11px 0px 3px;
     font-size: 18px;
       z-index: 99;
 }

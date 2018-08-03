@@ -17,8 +17,7 @@
         <ion-header-bar class="bar-side">
             <div class="side-image">
                 <figure>
-                    <a href="#/app/profile" menu-close><img src="img/component/profile.png"></a>
-                    <figcaption>Ana Todurie</figcaption>
+                    <img src="img/logo-white.png">
                 </figure>
                 <div class="profile-set">
                     <a href="#/app/setting" menu-close> <i class="icon ln-gear2 "></i>
@@ -33,33 +32,29 @@
 
 
             <ion-list class="side-menu">
-                <ion-item nav-clear menu-close href="#/app/home" class="item-icon-left">
+                <ion-item nav-clear menu-close href="#/start" class="item-icon-left">
                     <i class="icon ln-home3 side-menu-i"></i>
-                    Home
+                    Мероприятия
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/hometwo" class="item-icon-left">
-                    <i class="icon ln-home5 side-menu-i"></i>
-                    Home Two (optional)
+                <ion-item nav-clear menu-close href="#/speakers" class="item-icon-left">
+                    <i class="icon ln-users side-menu-i"></i>
+                    Спикеры
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/gallery" class="item-icon-left">
-                    <i class="icon ln-picture side-menu-i"></i>
-                    Gallery
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/about" class="item-icon-left">
-                    <i class="icon ln-users side-menu-i"></i>
-                    About
+                    <i class="icon ln-envelope side-menu-i"></i>
+                    Связаться с организатором
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/contact" class="item-icon-left">
                     <i class="icon ln-contacts side-menu-i"></i>
-                    Contact
+                    О приложении
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/faq" class="item-icon-left" ng-click="share();">
                     <i class="icon ln-comments side-menu-i"></i>
-                    FAQ
+                    Вопросы и ответы
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/user-login" class="item-icon-left" ng-click="logout()">
+                <ion-item nav-clear menu-close href="#/user-login" class="item-icon-left" ng-click="vm.logout()">
                     <i class="icon ln-exit side-menu-i"></i>
-                    Sign Out
+                    Выйти
                 </ion-item>
             </ion-list>
 

@@ -1,0 +1,26 @@
+<ion-view>
+	<ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+		<div class="gallery-set">
+			<div class="map-set">
+				<h2 class="title-c">Спикеры</h2>
+			</div>
+		</div>
+
+		<div class="gallery-img ">
+			<div class="row" ng-repeat="pair in vm.speakers">
+				<div class="col col-50" ng-repeat="speaker in pair">
+					<div class="set-image">
+						<a href="#/speaker/{{speaker.id}}">
+							<figure class="image-set">
+								<img ng-src="{{speaker.avatar}}" class="full-image">
+								<figcaption>{{speaker.fio}}</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

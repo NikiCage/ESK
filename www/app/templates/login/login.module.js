@@ -15,31 +15,9 @@
 							templateUrl: "./app/templates/login/auth/auth.html"
 						}
 					},
-                    authenticate : false
-				})
-				.state('app.login.consul', {
-					url: '/consul',
-					views : {
-						'content@app': {
-							controller: 'consulCntr as vm',
-							templateUrl: "./app/templates/login/consul/consul.html"
-						}
-					},
-                    roles: ['Respondents'],
-                    online: true,
-					authenticate : true
-				})
-				.state('app.login.dist', {
-					url: '/dist',
-					views : {
-						'content@app': {
-							controller: 'distCntr as vm',
-							templateUrl: "./app/templates/login/dist/dist.html"
-						}
-					},
+                    authenticate : false,
                     online: true
 				});
-
 		}
 
 })();

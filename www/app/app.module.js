@@ -14,22 +14,11 @@
         'ngResource',
         'ngStorage',
         'ionic-datepicker',
-        'app.navigation',
+
         'app.start',
         'app.login',
         'app.offline',
-        'app.catalog',
-        'app.category',
-        'app.product',
-        'app.toolbarNav',
-        'app.selection',
-        'app.filter',
-        'app.messages',
-        'app.chat',
-        'app.test',
-        'app.result',
-        'app.history',
-        'app.private'
+        'app.speakers',
     ]);
 
 })();

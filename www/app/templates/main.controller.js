@@ -5,38 +5,24 @@
  	angular.module('app')
 		.controller('mainCntr', mainCntr);
 
-		function mainCntr($app, $rootScope, $user, $catalog, $tests, $crm) {
-			var vm = this;
-            $catalog.init();
-            $tests.init();
-            $crm.init();
+		function mainCntr($app, $rootScope, $firebaseAuth, $scope, $ionicScrollDelegate) {
+			let vm = this;
 
-            $rootScope.inRole = $user.isInRole;
-            $rootScope.inRoles = $user.isInRoles;
+            vm.logout = $firebaseAuth.signOut;
+
             $rootScope.connection = $app.connection;
 
-            $rootScope.showSearchInput = showSearchInput;
-            $rootScope.hideSearchInput = hideSearchInput;
-            $rootScope.showToolbarNav  = showToolbarNav;
+            var maindele = $ionicScrollDelegate.$getByHandle('mainScroll');
+
+            $scope.mainscrolling = function() {
+                var topscroll = maindele.getScrollPosition().top;
+                var oncomblack = 300.0;
+                var coloropacity = topscroll / oncomblack;
+                $(".navClass ion-header-bar").css("background", "-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(64, 62, 93," + coloropacity + ")), color-stop(100%,rgba(255,255,255,0.00)))");
+
+            };
 
 
-            function showSearchInput() {
-                $('.hideOnSearchInput', '.b-header').toggle();
-                $('.hideSearchInput', '.b-header').toggle();
-                $('.b-btn__slide-input-wrap', '.b-header').toggleClass('b-btn__slide-input-wrap_long');
-                $('.b-header__input-wrap', '.b-header').toggleClass('b-header__input-wrap_long');
-            }
-
-            function hideSearchInput() {
-                $('.b-header__input-wrap', '.b-header').toggleClass('b-header__input-wrap_long');
-                $('.b-btn__slide-input-wrap', '.b-header').toggleClass('b-btn__slide-input-wrap_long');
-                $('.hideOnSearchInput', '.b-header').delay(300).toggle();
-                $('.hideSearchInput', '.b-header').delay(300).toggle();
-            }
-
-            function showToolbarNav() {
-                $('.b-toolbar-nav').show();
-            }
 		}
 
 })();
