@@ -1,0 +1,24 @@
+<ion-view>
+	<ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+		<div class="faq-set">
+			<div class="map-set">
+				<h2 class="title-c">Вопросы и ответы</h2>
+			</div>
+		</div>
+
+		<div class="faq-content">
+			<h4 class="text-center">Часто задаваемые вопросы</h4>
+			<div class="qsn-ans" ng-repeat="faqs in faq">
+				<div class="qsn-set">
+					<h5 class="qsn-set " ng-click="showmores($index)"><span class="qsn">Q</span>
+						{{faqs.qsn}}</h5>
+				</div>
+				<div class="ans-set faqhead faqhead{{$index}}">
+					<p class="addanimation pop animationfaq{{$index}}">{{faqs.ans}}</p>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

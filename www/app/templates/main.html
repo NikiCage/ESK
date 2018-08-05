@@ -28,9 +28,6 @@
         </ion-header-bar>
         <ion-content style="top:166px;">
 
-            <!--           Begin Menu Here    -->
-
-
             <ion-list class="side-menu">
                 <ion-item nav-clear menu-close href="#/start" class="item-icon-left">
                     <i class="icon ln-home3 side-menu-i"></i>
@@ -40,25 +37,27 @@
                     <i class="icon ln-users side-menu-i"></i>
                     Спикеры
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/gallery" class="item-icon-left">
+                <ion-item nav-clear menu-close href="#/contact" class="item-icon-left">
                     <i class="icon ln-envelope side-menu-i"></i>
                     Связаться с организатором
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/contact" class="item-icon-left">
+                <ion-item nav-clear menu-close href="#/about" class="item-icon-left">
                     <i class="icon ln-contacts side-menu-i"></i>
                     О приложении
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/faq" class="item-icon-left" ng-click="share();">
+                <ion-item nav-clear menu-close href="#/faq" class="item-icon-left">
                     <i class="icon ln-comments side-menu-i"></i>
                     Вопросы и ответы
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/" class="item-icon-left" ng-click="share();">
+                    <i class="icon  ln-share3 side-menu-i"></i>
+                    Поделиться
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/user-login" class="item-icon-left" ng-click="vm.logout()">
                     <i class="icon ln-exit side-menu-i"></i>
                     Выйти
                 </ion-item>
             </ion-list>
-
-            <!--            Menu End    -->
 
         </ion-content>
     </ion-side-menu>

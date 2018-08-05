@@ -19,6 +19,9 @@
         'app.login',
         'app.offline',
         'app.speakers',
+        'app.about',
+        'app.contact',
+        'app.faq',
     ]);
 
 })();

@@ -9,7 +9,7 @@
 			<div class="list login-user">
 				<label class=" item-input item-select">
 					<i class="icon ln-map-marker"></i>
-                    <div class="input-label">
+                    <div style="width: 45%" class="input-label">
                         Выберете город
                     </div>
 					<select id="city" ng-model="vm.city">
@@ -18,7 +18,7 @@
 				</label>
 				<label class=" item-input">
 					<i class="icon ln-phone"></i>
-                    <div class="input-label">
+                    <div style="width: 45%" class="input-label">
                         Номер телефона
                     </div>
 					<input id="phone" class="text-right" type="number" placeholder="79091234567" ng-model="vm.phone" ng-disabled="vm.codeShow" ng-pattern="\d{11}">
@@ -50,12 +50,12 @@
 				</div>
 
 				<div class="or text-center">
-					<p>- OR -</p>
+					<p>- ИЛИ -</p>
 				</div>
 				<div class="login-btn btn-set">
 
 					<button  ng-click="facebooklogin()" class="button button-full button-positive-facebook button-block">
-						Sign in With Facebook
+						Авторизоваться через Facebook
 					</button>
 
 				</div>

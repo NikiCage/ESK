@@ -1,0 +1,56 @@
+<ion-view>
+	<ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+		<div class="contact-set">
+			<div class="map-set">
+
+				<h2 class="title-b">Организатор</h2>
+				<div class="tab-set">
+					<p>
+						<a class="map {{tab =='form-set' && 'map-active'}}" ng-click="tab = 'form-set'">НАПИСАТЬ</a>
+						<span class="map-form {{tab =='contact-map' && 'map-active'}}" ng-click="tab = 'contact-map'">НА КАРТЕ</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="contact-form-set" ng-show="tab=='form-set'">
+			<div class="contact-form">
+				<div class="list login-user">
+					<label class=" item-input">
+						<i class="icon ln-user"></i>
+						<input type="text" placeholder="Имя">
+					</label>
+					<label class=" item-input">
+						<i class="icon ln-envelope"></i>
+						<input type="email" placeholder="Email">
+					</label>
+					<label class=" item-input">
+						<i class="icon ln-book-closed"></i>
+						<input type="text" placeholder="Тема">
+					</label>
+					<label class=" item-input">
+						<i class="icon ln-comments"></i>
+						<textarea placeholder="Сообщение"></textarea>
+					</label>
+
+				</div>
+			</div>
+			<div class="signin footer">
+				<div class="login-btn btn-set">
+					<a href="#/app/home">
+						<button class="button button-full button-positive button-block">
+							Отправить сообщение
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="contact-map" ng-show="tab=='contact-map'">
+			<h4>Как добраться</h4>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2736359736555!2d72.87047899999999!3d19.051703000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c6425d4cf9%3A0x310d2671e74a4ba8!2sWohlig!5e0!3m2!1sen!2sin!4v1434175166694" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+		</div>
+
+	</ion-content>
+</ion-view>
