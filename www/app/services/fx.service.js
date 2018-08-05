@@ -67,7 +67,25 @@
             return -1;
         }
         
+        function pair($root) {
+            let _root = [];
+
+            for (let i = 0; i < $root.length; i++) {
+                const arrindex = Math.floor(i / 2);
+                if ((_root.length - 1) != arrindex) {
+                    _root[arrindex] = [];
+                }
+                let obj = $root[i];
+                if(!angular.isObject(obj)) obj = {source : obj};
+                obj.id = i;
+                _root[arrindex].push(obj);
+            }
+
+            return _root;
+        }
+        
         return {
+            pair: pair,
             random: random,
             findIndexInArr: findIndexInArr,
             parseTemplate: parseTemplate,

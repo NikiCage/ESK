@@ -36,7 +36,19 @@
             return deferred.promise;
         };
 
-        return { load };
+        const getMaster = (id) => {
+            if(!mastersObject[id]) return null;
+            mastersObject[id].id = id;
+            return mastersObject[id];
+        };
+
+        const loadMaster = (id) => {
+            if(!id) return Promise.resolve(null);
+            if(mastersObject === false) return load().then(masters => getMaster(id));
+            return Promise.resolve(getMaster(id));
+        };
+
+        return { load , loadMaster};
     }
 
 })();

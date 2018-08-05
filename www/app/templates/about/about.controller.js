@@ -4,7 +4,7 @@
 	angular.module('app.about')
 		.controller('aboutCntr', aboutCntr);
 
-		function aboutCntr($scopeб $ionicScrollDelegate) {
+		function aboutCntr($scope, $ionicScrollDelegate) {
 			var vm = this;
             console.log('aboutCntr');
 

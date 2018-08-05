@@ -23,7 +23,11 @@
         };
 
         firebase.auth().onAuthStateChanged(newUser => {
-            handleUserChange(newUser);
+            if (!newUser) return handleUserChange(newUser);
+            const ref = firebase.database().ref('/users').child(newUser.uid);
+            ref.once('value', snapshot => {
+                handleUserChange(Object.assign({}, newUser, snapshot.val()));
+            });
         });
 
         const resolve = user => {

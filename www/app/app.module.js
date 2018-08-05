@@ -22,6 +22,8 @@
         'app.about',
         'app.contact',
         'app.faq',
+        'app.event',
+        'app.speaker'
     ]);
 
 })();

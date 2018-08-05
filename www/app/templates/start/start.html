@@ -22,17 +22,16 @@
 
 		<div class="popular">
 
-            <a>
-                <div class="popular-set" collection-repeat="event in vm.events | orderBy : 'endDate' | filter : {type : vm.current}">
-                    <figure ng-click="postDetail(txt.meta.links.self)">
-
-                        <img ng-src="{{event.img}}" alt="{{event.title}}" class="full-image">
-                        <div class="layer">
-                            <figcaption class="blog-name">{{event.title}}</figcaption>
-                        </div>
-                    </figure>
-                </div>
-            </a>
+			<div class="popular-set" collection-repeat="event in vm.events | orderBy : 'endDate' | filter : {type : vm.current}">
+				<a href="#/event/{{event.id}}" >
+					<figure>
+						<img ng-src="{{event.img}}" alt="{{event.title}}" class="full-image">
+						<div class="layer">
+							<figcaption class="blog-name">{{event.title}}</figcaption>
+						</div>
+					</figure>
+				</a>
+			</div>
 
 		</div>
 

@@ -1,0 +1,56 @@
+<ion-view>
+	<ion-content style="top:0px" overflow-scroll="true" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+		<div class="user-imgs">
+			<figure>
+				<img ng-src="{{vm.speaker.avatar}}" ng-if="vm.speaker.avatar!=0">
+				<figcaption>{{vm.speaker.fio}}</figcaption>
+			</figure>
+		</div>
+		<div class="artical-set">
+			<div class="map-set">
+				<h2 class="title-c">О спикере</h2>
+			</div>
+
+		</div>
+
+		<div class="articalcontent">
+			<div class="articals-det">
+				<p ng-bind-html="vm.speaker.description | rawHtml"></p>
+				<!--
+                                <div class="know-content addanimation" ng-class="showDetails">
+                                    <p class="moretext moreart" ng-bind-html="txts | rawHtml"></p>
+                                </div>
+                                <div class="know-more know-btn" ng-click="showmore('moreart');">
+                                    {{moredetails}}
+                                </div>
+                -->
+			</div>
+			<div class="articals-det">
+				<h2>Место работы:</h2>
+				<p ng-bind-html="vm.speaker.workspace | rawHtml"></p>
+			</div>
+			<div class="articals-det">
+				<h2>Награды:</h2>
+				<p ng-bind-html="vm.speaker.awards | rawHtml"></p>
+			</div>
+		</div>
+
+		<div class="gallery-img" ng-if="newgallery">
+			<div class="row" ng-repeat="pair in newgallery">
+				<div class="col col-50" ng-click="openModal(photo.id);" ng-repeat="photo in pair">
+					<figure class="image-set">
+						<img ng-src="{{photo.source}}" class="full-image">
+					</figure>
+				</div>
+			</div>
+		</div>
+
+		<div class="btn-set" ng-show="vm.canAddRequest()">
+			<button ng-click="vm.addRequest()" class="button button-full button-positive button-block">
+				Жду в нашем городе!
+			</button>
+		</div>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view>
+	<ion-content style="top:0px" overflow-scroll="true" delegate-handle="mainScroll" on-scroll="mainscrolling();">
+
+		<div class="user-imgs">
+			<figure ng-show="vm.master">
+				<img ng-src="{{vm.master.avatar}}" ng-if="vm.master.avatar!=0">
+				<figcaption>{{vm.master.fio}}</figcaption>
+			</figure>
+		</div>
+		<div class="artical-set" style="background-image: url({{vm.event.img}})">
+			<div class="map-set">
+				<h2 class="title-c">О мероприятии</h2>
+			</div>
+
+		</div>
+
+		<div class="articalcontent">
+			<div class="art-date">
+				<p>{{vm.event.dateStart | date:"dd MMM yyyy"}}<span ng-if="vm.event.dateStart != vm.event.dateEnd"> - {{vm.event.dateEnd | date:"dd MMM yyyy"}}</span></p>
+			</div>
+			<div class="articals-det">
+				<h3>"{{vm.event.title}}"</h3>
+				<p ng-bind-html="vm.event.description | rawHtml"></p>
+
+			</div>
+			<div class="articals-det">
+				<h4>Расписание мероприятия:</h4>
+				<p ng-bind-html="vm.event.schedule | rawHtml"></p>
+			</div>
+			<div class="articals-det">
+				<h4>Адрес мероприятия:</h4>
+				<p ng-bind-html="vm.event.address | rawHtml"></p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2736359736555!2d72.87047899999999!3d19.051703000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c6425d4cf9%3A0x310d2671e74a4ba8!2sWohlig!5e0!3m2!1sen!2sin!4v1434175166694" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+			</div>
+
+		</div>
+
+	</ion-content>
+</ion-view>
