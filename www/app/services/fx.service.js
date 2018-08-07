@@ -7,7 +7,7 @@
         .factory('$fx', fxService);
 
     /** @ngInject */
-    function fxService($q, defaultConst) {
+    function fxService($q, defaultConst, $http, $app) {
         
         function resolve(deferred, data) {
             if(deferred.pending){
@@ -83,8 +83,34 @@
 
             return _root;
         }
+
+        function mail(email, text) {
+            let fd = new FormData();
+            fd.append('from', defaultConst.mailgun.from);
+            fd.append('to', email);
+            fd.append('subject', 'Заявка на проведение мероприятия');
+            fd.append('text', text);
+
+            $http.post(
+                'https://cors-anywhere.herokuapp.com/https://api.mailgun.net/v3/' + defaultConst.mailgun.domain + '/messages',
+                fd,
+                {
+                    transformRequest: angular.identity,
+                    headers: {
+                        'Content-Type': undefined,
+                        'Authorization': 'Basic ' + defaultConst.mailgun.token
+                    }
+                }).then(function(response) {
+                if (response.statusText && response.statusText === 'OK') {
+                    $app.toast('Письмо отправлено');
+                }
+            }, function(err) {
+                $app.toast('Ошибка отправки');
+            });
+        }
         
         return {
+            mail: mail,
             pair: pair,
             random: random,
             findIndexInArr: findIndexInArr,

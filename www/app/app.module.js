@@ -14,6 +14,7 @@
         'ngResource',
         'ngStorage',
         'ionic-datepicker',
+        'yaMap',
 
         'app.start',
         'app.login',

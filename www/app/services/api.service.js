@@ -9,7 +9,12 @@
             'apiUrl'   : domain,
             'privateUrl'   : test ? 'http://lk-mobile.armelle-dev.ru' : 'https://lk-mobile.armelle.world',
             'state'   : 'main.start',
-            'thumbUrl' : domain + '%type%/%mode%/%id%_%width%_%height%'
+            'thumbUrl' : domain + '%type%/%mode%/%id%_%width%_%height%',
+            'mailgun': {
+                'token': 'YXBpOjNhYzgxZGVlNmVkMWNhOTg4YjRlZmZhNWYxYTcxMjI2LTNiMWY1OWNmLWNjZjBkYjE5',
+                'domain': 'mg.foxinet.ru',
+                'from': 'noreply@esk.com'
+            }
         };
 
     angular

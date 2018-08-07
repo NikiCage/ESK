@@ -21,18 +21,41 @@
 			<div class="articals-det">
 				<h3>"{{vm.event.title}}"</h3>
 				<p ng-bind-html="vm.event.description | rawHtml"></p>
-
 			</div>
+			<div class="gallery-img" ng-if="newgallery">
+				<div class="row" ng-repeat="pair in newgallery">
+					<div class="col col-50" ng-click="openModal(photo.id);" ng-repeat="photo in pair">
+						<figure class="image-set">
+							<img ng-src="{{photo.source}}" class="full-image">
+						</figure>
+					</div>
+				</div>
+			</div>
+
 			<div class="articals-det">
 				<h4>Расписание мероприятия:</h4>
 				<p ng-bind-html="vm.event.schedule | rawHtml"></p>
 			</div>
 			<div class="articals-det">
-				<h4>Адрес мероприятия:</h4>
-				<p ng-bind-html="vm.event.address | rawHtml"></p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2736359736555!2d72.87047899999999!3d19.051703000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c6425d4cf9%3A0x310d2671e74a4ba8!2sWohlig!5e0!3m2!1sen!2sin!4v1434175166694" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+				<h4>Цена:</h4>
+				<p ng-repeat="price in vm.event.prices">{{price.title}} - <strong>{{price.cost}} руб</strong></p>
 			</div>
-
+			<div class="articals-det">
+				<h4>Адрес мероприятия:</h4>
+				<p>г. {{vm.city}}, {{vm.event.address}}</p>
+				<div ng-if="vm.event.marker" style="width:100%; height:250px">
+					<ya-map ya-zoom="15" ya-center="{{ vm.event.map }}" ya-controls="" style="width:100%; height:250px;display: block;">
+						<ya-collection ya-options="{preset:'islands#redStretchyIcon',balloonMaxWidth:250}">
+							<ya-geo-object ya-source="vm.event.marker"></ya-geo-object>
+						</ya-collection>
+					</ya-map>
+				</div>
+			</div>
+			<div class="btn-set" ng-show="!vm.allowOrder">
+				<button ng-click="vm.addRequest()" class="button button-full button-positive button-block">
+					Хочу посетить семинар
+				</button>
+			</div>
 		</div>
 
 	</ion-content>

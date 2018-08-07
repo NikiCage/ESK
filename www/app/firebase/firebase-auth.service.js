@@ -83,7 +83,16 @@
 
         const setUser = user => handleUserChange(user);
 
-        return {authorize, identity, onAuthChange, request, authorizeWithCity, signOut, getUser, setUser, error};
+        const getOrg = () => {
+            const ref = firebase.database().ref('/org/').child(user.city);
+            let deferred = $q.defer();
+            ref.once('value', snapshot => {
+                deferred.resolve(snapshot.val());
+            });
+            return deferred.promise;
+        };
+
+        return {authorize, identity, onAuthChange, request, authorizeWithCity, signOut, getUser, setUser, error, getOrg};
     }
 
 })();
