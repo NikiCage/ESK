@@ -1,0 +1,29 @@
+<ion-modal-view>
+
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{seminar.title}}</h1>
+        <div class="buttons">
+            <button class="button button-clear button-primary" ng-click="closeSeminarModal()">Закрыть</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="user-imgs">
+            <figure>
+                <img ng-src="{{vm.speaker.avatar}}" ng-if="vm.speaker.avatar!=0">
+                <figcaption>{{vm.speaker.fio}}</figcaption>
+            </figure>
+        </div>
+        <div class="artical-set" style="background-image: url({{seminar.img}})"></div>
+        <div class="articalcontent">
+            <div class="articals-det">
+                <p ng-bind-html="seminar.description | rawHtml"></p>
+            </div>
+        </div>
+
+        <div class="btn-set" ng-show="vm.canAddRequest(seminar.id)">
+            <button ng-click="vm.addRequest(seminar.id)" class="button button-full button-positive button-block">
+                Жду в нашем городе!
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -40,7 +40,7 @@
             };
 
             const user = $firebaseAuth.getUser();
-            let requests = [], cities, apply = false;
+            let requests = [], cities, apply = {};
             $firebaseRequests.load().then(function(data) {
                 requests = data;
             });
@@ -51,15 +51,15 @@
             vm.canAddRequest = canAddRequest;
             vm.addRequest = addRequest;
 
-            function canAddRequest() {
-            	if(apply) return false;
+            function canAddRequest(id) {
+            	if(apply[id]) return false;
                 if (angular.isUndefined(user.city) || !user.uid) {
                     return false;
                 }
                 if (! requests || !requests[Speaker.id]) {
                     return true;
                 }
-                if (requests[Speaker.id][user.uid]) {
+                if (requests[Speaker.id][user.uid + '_' + id]) {
                     return false;
                 } else {
                     return true;
@@ -72,7 +72,7 @@
                 return cities[id];
             }
 
-            function addRequest() {
+            function addRequest(id) {
             	const city = getCityName(user.city);
                 const confirmPopup = $ionicPopup.confirm({
                     title: 'Приглашение спикера',
@@ -84,12 +84,29 @@
 
                 confirmPopup.then(function(res) {
                     if(res) {
-                        $firebaseRequests.addRequest(Speaker.id);
-                        apply = true;
+                        $firebaseRequests.addRequest(Speaker.id, id);
+                        apply[id] = true;
                     }
                 });
 
             }
+
+            $ionicModal.fromTemplateUrl('app/templates/seminar.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.seminar_modal = modal;
+                $scope.seminar_modal.show();
+                $scope.seminar_modal.hide();
+            });
+
+            $scope.openSeminarModal = function(seminar) {
+                $scope.seminar = seminar;
+                $scope.seminar_modal.show();
+            };
+            $scope.closeSeminarModal = function() {
+                $scope.seminar_modal.hide();
+            };
 		}
 
 })();

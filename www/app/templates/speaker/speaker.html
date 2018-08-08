@@ -26,30 +26,29 @@
                                 </div>
                 -->
 			</div>
-			<div class="articals-det">
-				<h4>Место работы:</h4>
-				<p ng-bind-html="vm.speaker.workspace | rawHtml"></p>
-			</div>
-			<div class="articals-det">
-				<h4>Награды:</h4>
-				<p ng-bind-html="vm.speaker.awards | rawHtml"></p>
-			</div>
-		</div>
-
-		<div class="gallery-img" ng-if="newgallery">
-			<div class="row" ng-repeat="pair in newgallery">
-				<div class="col col-50" ng-click="openModal(photo.id);" ng-repeat="photo in pair">
-					<figure class="image-set">
-						<img ng-src="{{photo.source}}" class="full-image">
-					</figure>
+			<div class="gallery-img" ng-if="newgallery">
+				<div class="row" ng-repeat="pair in newgallery">
+					<div class="col col-50" ng-click="openModal(photo.id);" ng-repeat="photo in pair">
+						<figure class="image-set">
+							<img ng-src="{{photo.source}}" class="full-image">
+						</figure>
+					</div>
 				</div>
 			</div>
+			<div class="articals-det" ng-if="vm.speaker.instagram">
+				<h4>Instagram: <a href="https://www.instagram.com/{{vm.speaker.instagram}}/" target="_blank">@{{vm.speaker.instagram}}</a></h4>
+			</div>
 		</div>
 
-		<div class="btn-set" ng-show="vm.canAddRequest()">
-			<button ng-click="vm.addRequest()" class="button button-full button-positive button-block">
-				Жду в нашем городе!
-			</button>
+		<div class="list">
+
+			<div class="item item-thumbnail-left" ng-repeat="price in vm.speaker.prices | ids" ng-click="openSeminarModal(price)">
+				<img ng-src="{{price.img}}">
+				<h2>{{price.title}}</h2>
+				<p>{{price.description}}</p>
+				<p><strong>{{price.cost}} руб</strong></p>
+			</div>
+
 		</div>
 
 	</ion-content>

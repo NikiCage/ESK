@@ -4,6 +4,7 @@
 
     angular
         .module('app')
+        .filter('ids', ids)
         .factory('$fx', fxService);
 
     /** @ngInject */
@@ -108,10 +109,18 @@
                 $app.toast('Ошибка отправки');
             });
         }
+
+        function ids(obj) {
+            for (let id in obj) {
+                obj[id].id = id;
+            }
+            return Object.values(obj);
+        }
         
         return {
             mail: mail,
             pair: pair,
+            ids: ids,
             random: random,
             findIndexInArr: findIndexInArr,
             parseTemplate: parseTemplate,
@@ -119,6 +128,12 @@
             parseThumb: parseThumb,
             resolve: resolve,
             defer: defer
+        };
+    }
+
+    function ids($fx) {
+        return function(obj) {
+            return $fx.ids(obj);
         };
     }
 

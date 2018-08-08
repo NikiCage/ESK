@@ -11,7 +11,14 @@
             $scope.tab = 'form-set';
 
             $scope.send = () => {
-
+                const msg = `
+                Сообщение от пользователя с формы обратной связи
+                Имя: ${vm.name}
+                Email: ${vm.email}
+                Тема: ${vm.subject}
+                Сообщение: ${vm.msg}
+               `;
+                $fx.mail(vm.org_email, msg);
             };
 
             const user = $firebaseAuth.getUser();
@@ -22,6 +29,7 @@
             $firebaseAuth.getOrg().then(org => {
                 console.log(org);
                 vm.address = org.address;
+                vm.org_email = org.email;
                 if(!$localStorage.addressesCoordinates) $localStorage.addressesCoordinates = {};
 
                 mapApiLoad( () => {

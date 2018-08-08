@@ -31,11 +31,11 @@
             return deferred.promise;
         };
 
-        const addRequest = (master) => {
+        const addRequest = (master, id) => {
             const user = $firebaseAuth.getUser();
             if(!user) return;
             try {
-                firebase.database().ref('/requests/' + user.city + '/' + master + '/' + user.uid).set({date: moment().unix()});
+                firebase.database().ref('/requests/' + user.city + '/' + master + '/' + user.uid + '_' + id).set({date: moment().unix()});
             } catch (e) {
                 return {error: e.message}
             }

@@ -4,13 +4,14 @@
 	angular.module('app.event')
 		.controller('eventCntr', eventCntr);
 
-		function eventCntr( $app, Event, $firebaseMasters, $fx, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, $localStorage, mapApiLoad, $firebaseAuth, $firebaseCities) {
+		function eventCntr( $app, Event, $firebaseMasters, $fx, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, $localStorage, mapApiLoad, $firebaseAuth, $firebaseCities, $ionicPopup) {
 			let vm = this;
             console.log('eventCntr');
 
             if(!Event) $app.toMainState();
 
             vm.event = Event;
+            vm.sendRequest = sendRequest;
 
             const masters = Object.keys(Event.masters);
 
@@ -89,6 +90,25 @@
                 $scope.$$phase || $scope.$apply();
             }
 
+            function sendRequest() {
+                const confirmPopup = $ionicPopup.confirm({
+                    title: 'Вы хотите посетить мероприятие?',
+                    template: `В случае согласия, с Вами свяжется по телефону менеджер`,
+                    cancelText: 'Отмена',
+                    okText: 'OK'
+                });
+
+                confirmPopup.then(function(res) {
+                    if(res) {
+                        const msg = `
+                        Заявка на семинар
+                        Пользователь с номером ${user.phoneNumber}
+                        Хочет посетить семинар ${vm.event.title}
+                       `;
+                        $fx.mail(vm.org_email, msg);
+                    }
+                });
+            }
 
 		}
 
