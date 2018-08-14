@@ -90,6 +90,10 @@
                 $scope.$$phase || $scope.$apply();
             }
 
+            $firebaseAuth.getOrg().then(org => {
+                vm.org_email = org.email;
+            });
+
             function sendRequest() {
                 const confirmPopup = $ionicPopup.confirm({
                     title: 'Вы хотите посетить мероприятие?',
@@ -101,11 +105,12 @@
                 confirmPopup.then(function(res) {
                     if(res) {
                         const msg = `
-                        Заявка на семинар
                         Пользователь с номером ${user.phoneNumber}
-                        Хочет посетить семинар ${vm.event.title}
+                        Хочет посетить семинар "${vm.event.title}"
                        `;
-                        $fx.mail(vm.org_email, msg);
+                        $fx.mail(vm.org_email, msg, 'Заявка на семинар').then(send => {
+                            if(send) $app.toast('Заявка отправлена!');
+                        });
                     }
                 });
             }

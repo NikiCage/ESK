@@ -8,7 +8,7 @@
         .factory('$fx', fxService);
 
     /** @ngInject */
-    function fxService($q, defaultConst, $http, $app) {
+    function fxService($q, defaultConst, $http, $app, $ionicLoading) {
         
         function resolve(deferred, data) {
             if(deferred.pending){
@@ -85,14 +85,16 @@
             return _root;
         }
 
-        function mail(email, text) {
+        function mail(email, text, subject) {
             let fd = new FormData();
             fd.append('from', defaultConst.mailgun.from);
             fd.append('to', email);
-            fd.append('subject', 'Заявка на проведение мероприятия');
+            fd.append('subject', subject);
             fd.append('text', text);
-
-            $http.post(
+            $ionicLoading.show({
+                template: 'Отправка...'
+            });
+            return $http.post(
                 'https://cors-anywhere.herokuapp.com/https://api.mailgun.net/v3/' + defaultConst.mailgun.domain + '/messages',
                 fd,
                 {
@@ -102,8 +104,9 @@
                         'Authorization': 'Basic ' + defaultConst.mailgun.token
                     }
                 }).then(function(response) {
+                $ionicLoading.hide();
                 if (response.statusText && response.statusText === 'OK') {
-                    $app.toast('Письмо отправлено');
+                   return true;
                 }
             }, function(err) {
                 $app.toast('Ошибка отправки');

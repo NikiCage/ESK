@@ -4,7 +4,7 @@
 	angular.module('app.contact')
 		.controller('contactCntr', contactCntr);
 
-		function contactCntr( $scope , $fx, $firebaseAuth, $firebaseCities, $localStorage, mapApiLoad) {
+		function contactCntr( $app, $scope , $fx, $firebaseAuth, $firebaseCities, $localStorage, mapApiLoad) {
 			let vm = this;
             console.log('contactCntr');
 
@@ -12,13 +12,18 @@
 
             $scope.send = () => {
                 const msg = `
-                Сообщение от пользователя с формы обратной связи
                 Имя: ${vm.name}
                 Email: ${vm.email}
                 Тема: ${vm.subject}
                 Сообщение: ${vm.msg}
                `;
-                $fx.mail(vm.org_email, msg);
+                $fx.mail(vm.org_email, msg, 'Сообщение от пользователя с формы обратной связи').then(send => {
+                    if(send) $app.toast('Сообщение отправлено!');
+                    vm.name = '';
+                    vm.email = '';
+                    vm.subject = '';
+                    vm.msg = '';
+                });
             };
 
             const user = $firebaseAuth.getUser();
