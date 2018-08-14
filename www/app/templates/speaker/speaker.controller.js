@@ -59,7 +59,7 @@
                 if (! requests || !requests[Speaker.id]) {
                     return true;
                 }
-                if (requests[Speaker.id][user.uid + '_' + id]) {
+                if (requests[Speaker.id][user.uid] && requests[Speaker.id][user.uid][id]) {
                     return false;
                 } else {
                     return true;
