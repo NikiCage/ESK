@@ -12,7 +12,7 @@
         .factory('$app', appService);
 
     /** @ngInject */
-    function appService($window, $cordovaDevice, $ionicPopup, $ionicHistory, $ionicPlatform, $ionicLoading, $rootScope, $state, defaultConst, $api, $q, VERSIONS, $cordovaToast, $timeout, $localStorage) {
+    function appService($window, $ionicPopup, $ionicHistory, $ionicPlatform, $ionicLoading, $rootScope, $state, defaultConst, $api, $q, VERSIONS, $cordovaToast, $timeout, $localStorage) {
         var versions, active = true;
         $app(function () {
             if ($window.PushNotification) {
@@ -268,10 +268,10 @@
         function getOS() {
             var os;
             try {
-                os = $cordovaDevice.getPlatform().toLowerCase();
+                os = device.platform.toLowerCase();
             }
             catch (e){
-                os = 'android';
+                os = 'browser';
             }
             return os;
         }
@@ -279,7 +279,7 @@
         function getOSVersion() {
             var os_version;
             try {
-                os_version = $cordovaDevice.getVersion();
+                os_version = device.version;
             }
             catch (e){
                 os_version = '';

@@ -9,7 +9,7 @@
 			<div class="list login-user">
 				<label class=" item-input item-select">
 					<i class="icon ln-map-marker"></i>
-                    <div style="width: 45%" class="input-label">
+                    <div style="font-size: 14px" class="input-label">
                         Выберете город
                     </div>
 					<select id="city" ng-model="vm.city">
@@ -18,14 +18,14 @@
 				</label>
 				<label class=" item-input">
 					<i class="icon ln-phone"></i>
-                    <div style="width: 45%" class="input-label">
+                    <div style=" font-size: 14px; white-space: nowrap " class="input-label">
                         Номер телефона
                     </div>
 					<input id="phone" class="text-right" type="number" placeholder="79091234567" ng-model="vm.phone" ng-disabled="vm.codeShow">
 				</label>
 				<label class=" item-input" ng-if="vm.codeShow">
 					<i class="icon ln-lock"></i>
-                    <div class="input-label">
+                    <div class="input-label" style=" font-size: 14px">
                         Введите код
                     </div>
 					<input id="code" class="text-right" type="number" placeholder="******" ng-model="vm.code">
@@ -49,7 +49,7 @@
 					</a>
 				</div>
 
-				<div class="or text-center">
+				<!--<div class="or text-center">
 					<p>- ИЛИ -</p>
 				</div>
 				<div class="login-btn btn-set">
@@ -65,7 +65,7 @@
 						Sign in With Twitter
 					</button>
 
-				</div>
+				</div>-->
 				<!--<div class="sign text-center">
 					<span>Don’t have an account?<a href="#/user-signup">Sign Up</a></span>
 				</div>-->

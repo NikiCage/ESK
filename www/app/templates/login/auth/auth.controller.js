@@ -5,7 +5,7 @@
 		.controller('authCntr', authCntr);
 
 		function authCntr($app, $scope, $firebaseAuth, $ionicLoading, $firebaseCities) {
-			let vm = this, captcha, $confirm;
+			let vm = this, captcha, verificator;
 			// Data
 
 			if(!$app.connection()){
@@ -46,10 +46,13 @@
                 });
 
                 console.log('+' + vm.phone);
+                console.log($app.getOS());
+                console.log($firebaseAuth.request);
                 $firebaseAuth.request('+' + vm.phone, captcha).then(confirmationResult => {
+                    console.log(confirmationResult);
                     $ionicLoading.hide();
                     vm.codeShow = true;
-                    $confirm = confirmationResult;
+                    verificator = confirmationResult;
                     return null;
                 }).catch(() => {
                     $ionicLoading.hide();
@@ -74,12 +77,11 @@
                 $ionicLoading.show({
                     template: 'Проверка кода...'
                 });
-                $confirm.confirm(vm.code+'').then(response => {
-                    console.log(response);
+                $firebaseAuth.confirm(verificator, vm.code+'').then(user => {
 					$ionicLoading.hide();
+                    $firebaseAuth.setUser(user);
                     $firebaseAuth.authorizeWithCity(vm.city);
-                    $firebaseAuth.setUser(response.user)
-				}).catch(() => {
+                }).catch(() => {
                     $ionicLoading.hide();
                     $app.toast('LongBottom')('Ошибка при проверке. Попробуйте еще раз');
                 });

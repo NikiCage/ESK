@@ -45,7 +45,19 @@
 
         firebase.auth().useDeviceLanguage();
 
-        const request = (phoneNumber, applicationVerifier) => firebase.auth().signInWithPhoneNumber(phoneNumber, applicationVerifier).then(success);
+        const request = (phoneNumber, applicationVerifier) => $app.getOS() === 'browser'  ?
+             firebase.auth().signInWithPhoneNumber(phoneNumber, applicationVerifier).then(success) :
+             new Promise(resolve => {console.log(phoneNumber); window.FirebasePlugin.verifyPhoneNumber(phoneNumber, 120, credential => resolve(credential),error => console.error(error))}).then(success);
+
+        const confirm = (verificator, code) => {
+            if($app.getOS() === 'browser')
+                return verificator.confirm(code).then(response => response.user);
+            else {
+                const verificationId = verificator.verificationId;
+                const credential = firebase.auth.PhoneAuthProvider.credential(verificationId, code);
+                return firebase.auth().signInWithCredential(credential);
+            }
+        };
 
         const authorize = () => identity()
             .then(function(user) {
@@ -92,7 +104,7 @@
             return deferred.promise;
         };
 
-        return {authorize, identity, onAuthChange, request, authorizeWithCity, signOut, getUser, setUser, error, getOrg};
+        return {authorize, identity, onAuthChange, request, confirm, authorizeWithCity, signOut, getUser, setUser, error, getOrg};
     }
 
 })();

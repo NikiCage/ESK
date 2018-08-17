@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1055896560175",
+    "firebase_url": "https://esk-2c1b5.firebaseio.com",
+    "project_id": "esk-2c1b5",
+    "storage_bucket": "esk-2c1b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055896560175:android:6a9c11340b6ab1a2",
+        "android_client_info": {
+          "package_name": "com.esk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055896560175-ncncvtr38grlmjmstohf1tkbocf1nbgb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY-lojBOJMmfIeOpZqxQIJDmbrFfs36ok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
