@@ -35,7 +35,7 @@
             const user = $firebaseAuth.getUser();
             if(!user) return;
             try {
-                firebase.database().ref('/requests/' + user.city + '/' + master + '/' + user.uid + '/' + id).set({date: moment().unix()});
+                firebase.database().ref('/requests/' + user.city + '/' + master + '/' + user.phoneNumber + '/' + id).set({date: moment().unix() * 1000});
             } catch (e) {
                 return {error: e.message}
             }
