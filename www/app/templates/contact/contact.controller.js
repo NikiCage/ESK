@@ -4,7 +4,7 @@
 	angular.module('app.contact')
 		.controller('contactCntr', contactCntr);
 
-		function contactCntr( $app, $scope , $fx, $firebaseAuth, $firebaseCities, $localStorage, mapApiLoad) {
+		function contactCntr( $app, $scope , $fx, $firebaseAuth, $firebaseCities, $localStorage, $mapApiLoad) {
 			let vm = this;
             console.log('contactCntr');
 
@@ -37,7 +37,7 @@
                 vm.org_email = org.email;
                 if(!$localStorage.addressesCoordinates) $localStorage.addressesCoordinates = {};
 
-                mapApiLoad( () => {
+                $mapApiLoad( () => {
                     if($localStorage.addressesCoordinates[org.email]){
                         drawMap();
                     }else{

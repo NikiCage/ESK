@@ -12,7 +12,7 @@
         .factory('$app', appService);
 
     /** @ngInject */
-    function appService($window, $cordovaDevice, $ionicPopup, $ionicHistory, $ionicPlatform, $ionicLoading, $rootScope, $state, defaultConst, $api, $q, VERSIONS, $cordovaToast, $timeout, $localStorage) {
+    function appService($window, $cordovaDevice, $ionicPopup, $ionicHistory, $ionicPlatform, $ionicLoading, $rootScope, $state, defaultConst, $q, VERSIONS, $cordovaToast, $timeout, $localStorage) {
         var versions, active = true;
         $app(function () {
             if ($window.PushNotification) {
@@ -41,19 +41,7 @@
                     console.log('notification');
                     console.log(data);
                     var notification = data.additionalData;
-                    if (notification['force-start'] && notification.notify_id) {
-                        $api.notify.confirm({id: notification.notify_id});
-                        if(!$app.sysPopups[notification.notify_id]){
-                            $app.sysPopups[notification.notify_id] = $ionicPopup.alert({
-                                title: "Уведомление",
-                                content: data.title,
-                                okText: 'OK'
-                            }).then(function(result) {
-                                $app.sysPopups[notification.notify_id] = null;
-                            });
-                        }
-
-                    } else if (!notification.foreground && notification.type && active) {
+                    if (!notification.foreground && notification.type && active) {
                         switch (notification.type) {
                             case "new_message" : {
                                 if (notification.dialog_id) {
@@ -222,30 +210,6 @@
             }
         };
 
-        $app.versions = function() {
-            var deferred = $q.defer();
-
-            if (angular.isDefined(versions)) {
-                deferred.resolve(versions);
-                return deferred.promise;
-            }
-
-            if($app.connection()) {
-                $api.service.versions({ os : $app.getOS() }, function (response) {
-                    if(response && !response.error){
-                        versions = response;
-                        checkCurrentVersions();
-                        deferred.resolve(versions);
-                    }else {
-                        deferred.reject();
-                    }
-                }, deferred.reject);
-            }else {
-                deferred.reject();
-            }
-
-            return deferred.promise;
-        };
         $app.toast = function (mode) {
             if(!mode) mode = 'LongBottom';
             return function (text) {

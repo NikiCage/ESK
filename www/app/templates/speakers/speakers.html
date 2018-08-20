@@ -1,14 +1,27 @@
 <ion-view>
-	<ion-content style="top:0px" overflow-scroll="false" delegate-handle="mainScroll" on-scroll="mainscrolling();">
 
-		<div class="gallery-set">
-			<div class="map-set">
-				<h2 class="title-c">Спикеры</h2>
-			</div>
+	<div class="bar has-tabs-top bar-header bar-positive">
+		<h1 class="title">Спикеры</h1>
+	</div>
+
+	<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+		<div class="tabs">
+			<a class="tab-item {{vm.current == 'hair' && 'active'}}" ng-click="vm.current = 'hair'">
+				<span>Волосы</span>
+			</a>
+			<a class="tab-item {{vm.current == 'nails' && 'active'}}" ng-click="vm.current = 'nails'">
+				<span>Ногти</span>
+			</a>
+			<a class="tab-item {{vm.current == 'visage' && 'active'}}" ng-click="vm.current = 'visage'">
+				<span>Визаж</span>
+			</a>
 		</div>
+	</div>
+
+	<ion-content class="has-tabs-top" overflow-scroll="false">
 
 		<div class="gallery-img ">
-			<div class="row" ng-repeat="pair in vm.speakers">
+			<div class="row" ng-repeat="pair in vm.speakers | filter : {types : vm.current}">
 				<div class="col col-50" ng-repeat="speaker in pair">
 					<div class="set-image">
 						<a href="#/speaker/{{speaker.id}}">

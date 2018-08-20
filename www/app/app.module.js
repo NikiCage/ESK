@@ -10,7 +10,7 @@
     angular.module('app', [
         'ionic',
         'ui.router',
-        'ionic.native',
+        'ngCordova',
         'ngResource',
         'ngStorage',
         'ionic-datepicker',

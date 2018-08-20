@@ -7,7 +7,7 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($auth, $rootScope, $user, $ionicLoading, $timeout, $app)
+    function runBlock($rootScope, $ionicLoading, $timeout, $app)
     {
         $rootScope.stateHistory = [];
         $rootScope.backToState = false;
@@ -15,7 +15,7 @@
             $rootScope.toState = toState;
             $rootScope.toStateParams = toStateParams;
 
-            if ($user.isIdentityResolved()) $auth.authorize();
+            //if ($user.isIdentityResolved()) $auth.authorize();
         });
 
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toStateParams, fromState, fromStateParams){

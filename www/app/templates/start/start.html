@@ -1,28 +1,14 @@
 <ion-view>
 
-	<div class="bar has-tabs-top bar-header bar-positive">
+	<div class="bar bar-header bar-positive">
 		<h1 class="title">Семинары</h1>
 	</div>
 
-	<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-		<div class="tabs">
-			<a class="tab-item {{vm.current == 'hair' && 'active'}}" ng-click="vm.current = 'hair'">
-				<span>Волосы</span>
-			</a>
-			<a class="tab-item {{vm.current == 'nails' && 'active'}}" ng-click="vm.current = 'nails'">
-				<span>Ногти</span>
-			</a>
-			<a class="tab-item {{vm.current == 'visage' && 'active'}}" ng-click="vm.current = 'visage'">
-				<span>Визаж</span>
-			</a>
-		</div>
-	</div>
-
-	<ion-content class="has-tabs-top" overflow-scroll="false">
+	<ion-content overflow-scroll="false">
 
 		<div class="popular">
 
-			<div class="popular-set" collection-repeat="event in vm.events | orderBy : 'endDate' | filter : {type : vm.current}">
+			<div class="popular-set" collection-repeat="event in vm.events | orderBy : 'endDate'">
 				<a href="#/event/{{event.id}}" >
 					<figure>
 						<img ng-src="{{event.img}}" alt="{{event.title}}" class="full-image">

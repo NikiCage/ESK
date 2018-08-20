@@ -15,7 +15,7 @@
 						{{faqs.qsn}}</h5>
 				</div>
 				<div class="ans-set faqhead faqhead{{$index}}">
-					<p class="addanimation pop animationfaq{{$index}}">{{faqs.ans}}</p>
+					<p class="addanimation pop animationfaq{{$index}}" ng-bind-html="faqs.ans"></p>
 				</div>
 			</div>
 		</div>
