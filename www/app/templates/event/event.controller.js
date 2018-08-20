@@ -4,7 +4,7 @@
 	angular.module('app.event')
 		.controller('eventCntr', eventCntr);
 
-		function eventCntr( $app, Event, $firebaseMasters, $fx, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, $localStorage, $mapApiLoad, $firebaseAuth, $firebaseCities, $ionicPopup) {
+		function eventCntr( $app, Event, $firebaseMasters, $fx, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, $localStorage, mapApiLoad, $firebaseAuth, $firebaseCities, $ionicPopup) {
 			let vm = this;
             console.log('eventCntr');
 
@@ -57,7 +57,7 @@
 
             if(!$localStorage.addressesCoordinates) $localStorage.addressesCoordinates = {};
 
-            $mapApiLoad( () => {
+            mapApiLoad( () => {
                 if($localStorage.addressesCoordinates[vm.event.id]){
                     drawMap();
                 }else{

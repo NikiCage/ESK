@@ -19,56 +19,63 @@
 
     angular
         .module('app')
-        .constant('defaultConst', defaultConst).
-    factory('$mapApiLoad',['yaMapSettings',function(yaMapSettings){
-        var loaded = false;
-        var callbacks = [];
-        var runCallbacks = function(){
-            var callback;
-            while(callbacks.length){
-                callback = callbacks.splice(0,1);
-                callback[0]();
-            }
-        };
-        var loadUrl = 'http://api-maps.yandex.ru/2.0/?load=package.full&lang=' +
-            (yaMapSettings.lang || 'ru-RU') +'&coordorder=' +(yaMapSettings.order || 'longlat');
-        var _loading = false;
-        var loadScript = function(url, callback){
-            if(_loading){
-                return;
-            }
-            _loading=true;
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            if (script.readyState){ // IE
-                script.onreadystatechange = function(){
-                    if (script.readyState=="loaded" || script.readyState=="complete"){
-                        script.onreadystatechange = null;
-                        callback();
-                    }
-                };
-            } else { // Другие броузеры
-                script.onload = function(){
-                    callback();
-                };
-            }
-            script.src = url;
-            document.getElementsByTagName("head")[0].appendChild(script);
-        };
+        .constant('defaultConst', defaultConst)
+        .config(['$provide', function($provide) {
 
-        return function(callback){
-            callbacks.push(callback);
-            if(loaded){
-                runCallbacks();
-            }else if(!_loading){
-                loadScript(loadUrl, function(){
-                    ymaps.ready(function(){
-                        loaded=true;
-                        runCallbacks();
+    $provide.decorator('mapApiLoad', [
+        '$delegate', 'yaMapSettings',
+        function mapApiLoadDecorator($delegate, yaMapSettings) {
+            var loaded = false;
+            var callbacks = [];
+            var runCallbacks = function () {
+                var callback;
+                while (callbacks.length) {
+                    callback = callbacks.splice(0, 1);
+                    callback[0]();
+                }
+            };
+            var loadUrl = 'http://api-maps.yandex.ru/2.0/?load=package.full&lang=' +
+                (yaMapSettings.lang || 'ru-RU') + '&coordorder=' + (yaMapSettings.order || 'longlat');
+            var _loading = false;
+            var loadScript = function (url, callback) {
+                if (_loading) {
+                    return;
+                }
+                _loading = true;
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                if (script.readyState) { // IE
+                    script.onreadystatechange = function () {
+                        if (script.readyState == "loaded" || script.readyState == "complete") {
+                            script.onreadystatechange = null;
+                            callback();
+                        }
+                    };
+                } else { // Другие броузеры
+                    script.onload = function () {
+                        callback();
+                    };
+                }
+                script.src = url;
+                document.getElementsByTagName("head")[0].appendChild(script);
+            };
+
+            $delegate = function (callback) {
+                callbacks.push(callback);
+                if (loaded) {
+                    runCallbacks();
+                } else if (!_loading) {
+                    loadScript(loadUrl, function () {
+                        ymaps.ready(function () {
+                            loaded = true;
+                            runCallbacks();
+                        });
                     });
-                });
-            }
-        };
-    }])
+                }
+            };
+            return $delegate;
+        }
+    ]);
+}]);
 
 })();
