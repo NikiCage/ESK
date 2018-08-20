@@ -49,7 +49,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
         <resource-file src="google-services.json" target="app/google-services.json" />
-        <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.1+" />
     </platform>
     <platform name="ios">
         <preference name="StatusBarOverlaysWebView" value="false" />
