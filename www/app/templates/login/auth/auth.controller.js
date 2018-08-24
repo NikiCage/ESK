@@ -45,8 +45,8 @@
                     template: 'Отправка кода по смс...'
                 });
 
-                let phone = vm.phone;
-                if(phone.indexOf(8) === 0) phone = 7 + phone.slice(1);
+                let phone = vm.phone + '';
+                if(phone.indexOf('8') === 0) phone = 7 + phone.slice(1);
                 phone = '+' + phone;
                 console.log('+' + vm.phone);
                 console.log($app.getOS());
