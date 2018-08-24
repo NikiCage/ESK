@@ -45,10 +45,13 @@
                     template: 'Отправка кода по смс...'
                 });
 
+                let phone = vm.phone;
+                if(phone.indexOf(8) === 0) phone = 7 + phone.slice(1);
+                phone = '+' + phone;
                 console.log('+' + vm.phone);
                 console.log($app.getOS());
                 console.log($firebaseAuth.request);
-                $firebaseAuth.request('+' + vm.phone, captcha).then(confirmationResult => {
+                $firebaseAuth.request(phone, captcha).then(confirmationResult => {
                     console.log(confirmationResult);
                     $ionicLoading.hide();
                     vm.codeShow = true;

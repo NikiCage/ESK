@@ -131,5 +131,5 @@
     <plugin name="cordova-plugin-x-socialsharing" spec="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.1+" />
     </plugin>
-    <engine name="android" spec="7.1.0" />
+    <engine name="android" spec="7.0.4" />
 </widget>
