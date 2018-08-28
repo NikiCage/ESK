@@ -1,7 +1,2 @@
-{
-  "cities" : [
-    "Новороссийск",
-    "Анапа",
-    "Геленджик"
-  ]
-}
+jarsigner -keystore esk.keystore -storepass 71824178907 -keypass 71824178907 app-armv7-release-unsigned.apk esk
+zipalign -v 4 app-armv7-release-unsigned.apk esk.apk
