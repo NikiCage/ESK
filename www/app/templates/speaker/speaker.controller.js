@@ -8,7 +8,7 @@
 			let vm = this;
             console.log('speakerCntr');
 
-			if(!Speaker) $app.toMainState();
+			if(!Speaker) return $app.toMainState();
 
             vm.speaker = Speaker;
 

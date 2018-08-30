@@ -78,7 +78,7 @@
                 }
                 let obj = $root[i];
                 if(!angular.isObject(obj)) obj = {source : obj};
-                obj.id = i;
+                if(angular.isUndefined(obj.id)) obj.id = i;
                 _root[arrindex].push(obj);
             }
 
@@ -114,6 +114,7 @@
         }
 
         function ids(obj) {
+            if(!obj) return [];
             for (let id in obj) {
                 obj[id].id = id;
             }

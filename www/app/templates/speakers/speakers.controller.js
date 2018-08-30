@@ -8,7 +8,7 @@
 			var vm = this;
             vm.current = 'hair';
             $firebaseMasters.load().then(speakers => {
-            	vm.speakers = $fx.pair(Object.values(speakers));
+            	vm.speakers = $fx.pair($fx.ids(speakers));
             });
 
 		}

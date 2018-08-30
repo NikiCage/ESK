@@ -17,27 +17,20 @@
 
 		<h3 class="text-center">Нет соединения с интернетом</h3>
 
-		<p class="light-gray mb-20">Страница недоступна в режиме offline</p>
+		<p class="light-gray mb-20 text-center">Страница недоступна в режиме offline</p>
 
-		<div class="b-button-block">
-			<button class="button button-assertive b-button-block__button b-button-block__button_no-offset  b-button-block__button_large mb-10"
-					ng-click="vm.refresh()">
+		<div class="login footer">
+		<div class="login-btn btn-set">
+			<button ng-click="vm.refresh()" class="button button-full button-block button-positive">
 				Попробовать еще раз
 			</button>
-		</div>
-
-		<div class="b-button-block">
-			<button class="button button-assertive b-button-block__button b-button-block__button_no-offset  b-button-block__button_large  mb-10"
-					ng-click="vm.toMainState()">
+			<button ng-click="vm.toMainState()" class="button button-full button-block button-positive">
 				На главный экран
 			</button>
-		</div>
-
-		<div class="b-button-block">
-			<button class="button b-button-block__button b-button-block__button_no-offset  b-button-block__button_large  mb-10"
-					ng-click="vm.exit()">
+			<button ng-click="vm.exit()" class="button button-full button-block button-positive">
 				Выход из приложения
 			</button>
+		</div>
 		</div>
 
 	</div>
