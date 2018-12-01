@@ -1,0 +1,2 @@
+jarsigner -keystore esk.keystore -storepass 71824178907 -keypass 71824178907 ./platforms/android/app/build/outputs/apk/armv7/release/app-armv7-release-unsigned.apk esk
+zipalign -v 4 ./platforms/android/app/build/outputs/apk/armv7/release/app-armv7-release-unsigned.apk esk.apk

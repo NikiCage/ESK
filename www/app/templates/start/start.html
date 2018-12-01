@@ -8,7 +8,7 @@
 
 		<div class="popular">
 
-			<div class="popular-set" collection-repeat="event in vm.events | orderBy : 'endDate'">
+			<div class="popular-set" collection-repeat="event in vm.events | orderBy : 'dateEnd'">
 				<a href="#/event/{{event.id}}" >
 					<figure>
 						<img ng-src="{{event.img}}" alt="{{event.title}}" class="full-image">
