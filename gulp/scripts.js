@@ -29,6 +29,6 @@ function buildScripts()
         // to check your code every time the scripts reloaded
         //.pipe($.eslint())
         //.pipe($.eslint.format())
-        .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')))
+        //.pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')))
         .pipe($.size());
 }

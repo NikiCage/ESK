@@ -20,8 +20,8 @@ gulp.task('partials', function () {
             removeComments: true
         }))
         .pipe($.angularTemplatecache('templateCacheHtml.js', {
-            module: 'chatapi',
-            root: 'app'
+            module: 'app',
+            root: './app'
         }))
         .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 });

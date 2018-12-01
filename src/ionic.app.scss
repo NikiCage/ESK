@@ -23,6 +23,8 @@ $ionicons-font-path:"../ionic/fonts" !default;
 // bower:scss
 // endbower
 
-@import "selig/scss/selig.scss";
+@import "icons/linearicons/icons";
+
+@import "selig/scss/selig";
 
 @import "ionic/scss/ionic";
