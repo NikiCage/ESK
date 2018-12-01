@@ -20,6 +20,9 @@ $dark:                            #444 !default;
 $ionicons-font-path:"../ionic/fonts" !default;
 // Include all of Ionic
 
-@import "www/selig/scss/selig.scss";
+// bower:scss
+// endbower
 
-@import "www/ionic/scss/ionic";
+@import "selig/scss/selig.scss";
+
+@import "ionic/scss/ionic";

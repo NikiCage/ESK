@@ -1,34 +1,29 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
 var sh = require('shelljs');
+var fse = require('fs-extra');
 
-var paths = {
-    sass: ['./scss/**/*.scss','./www/selig/**/*.scss'],
-};
-
-gulp.task('default', ['sass']);
-
-gulp.task('sass', function(done) {
-    gulp.src('./scss/ionic.app.scss')
-        .pipe(sass({
-            errLogToConsole: true
-        }))
-        .pipe(gulp.dest('./www/css/'))
-        .pipe(minifyCss({
-            keepSpecialComments: 0
-        }))
-        .pipe(rename({ extname: '.min.css' }))
-        .pipe(gulp.dest('./www/css/'))
-        .on('end', done);
-});
-
-gulp.task('watch', function() {
-    gulp.watch(paths.sass, ['sass']);
+/**
+ *  This will load all js or coffee files in the gulp directory
+ *  in order to load all gulp tasks
+ */
+fse.walkSync('./gulp').filter(function (file)
+    {
+        return (/\.(js|coffee)$/i).test(file);
+    }
+).map(function (file)
+    {
+        require('./' + file);
+    }
+);
+/**
+ *  Default task clean temporaries directories and launch the
+ *  main optimization build task
+ */
+gulp.task('default', ['clean'], function ()
+{
+    gulp.start('build');
 });
 
 gulp.task('install', ['git-check'], function() {

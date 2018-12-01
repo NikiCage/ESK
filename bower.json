@@ -4,12 +4,42 @@
   "dependencies": {
     "angular-resource": "1.5.5",
     "ngstorage": "^0.3.11",
-    "angular-ui-mask": "^1.8.7",
     "angular-i18n": "^1.6.7",
     "moment": "^2.20.1",
     "ionic-datepicker-fork-ionic1": "^1.6.3",
     "firebase": "^5.3.0",
     "ngCordova": "^0.1.27-alpha",
-    "ya-map": "angular-yandex-map#^1.0.9"
+    "ya-map": "angular-yandex-map#^1.0.9",
+    "jquery": "^3.3.1",
+    "ionic": "1.3.2"
+  },
+  "overrides": {
+    "angular-i18n": {
+      "main": [
+        "angular-locale_ru.js"
+      ]
+    },
+    "moment": {
+      "main": [
+        "min/moment.min.js",
+        "locale/ru.js"
+      ]
+    },
+    "ionic-datepicker-fork-ionic1": {
+      "main": [
+        "dist/ionic-datepicker.bundle.min.js"
+      ]
+    },
+    "ionic": {
+      "main": [
+        "release/js/ionic.js",
+        "release/js/ionic-angular.js"
+      ]
+    },
+    "ya-map": {
+      "main": [
+        "ya-map-2.1.min.js"
+      ]
+    }
   }
 }

@@ -1,8 +1,10 @@
 *.iml
-
+.tmp/
+www/
 .idea/
+.sass-cache/
 node_modules/
+bower_components/
 plugins/
-www/lib
 platforms/*
 
